@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="53.886002mm"
+   height="107.56219mm"
+   viewBox="0 0 53.886002 107.56219"
+   version="1.1"
+   id="svg25265"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="fangs.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview25267"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.69486532"
+     inkscape:cx="174.85403"
+     inkscape:cy="238.89522"
+     inkscape:window-width="1920"
+     inkscape:window-height="974"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs25262" />
+  <g
+     inkscape:label="图层 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-59.578,-85.109404)">
+    <path
+       style="fill:#8c1616;fill-opacity:1;stroke:#5a0b0b;stroke-width:8.02;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:42;stroke-dasharray:none;stroke-opacity:1"
+       d="M 63.58846,89.119 63.588,153.83077 109.454,188.662 V 123.75 Z"
+       id="path28290"
+       sodipodi:nodetypes="ccccc" />
+  </g>
+</svg>

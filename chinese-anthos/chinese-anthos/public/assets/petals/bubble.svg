@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="129.70657"
+   width="129.70657"
+   version="1.1"
+   viewBox="0 0 95.118154 95.118154"
+   id="svg67249"
+   sodipodi:docname="bubble.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs67253" />
+  <sodipodi:namedview
+     id="namedview67251"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     showgrid="false"
+     inkscape:zoom="3.9927963"
+     inkscape:cx="29.427998"
+     inkscape:cy="65.868625"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <mask
+     id="mask">
+    <circle
+       cx="55"
+       cy="55"
+       r="50"
+       style="fill:#ffffff;stroke:#000000;stroke-width:4"
+       id="circle67238" />
+    <circle
+       cx="75"
+       cy="75"
+       r="10"
+       style="fill:#000000"
+       id="circle67240" />
+  </mask>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Layer 1"
+     style="display:inline;opacity:0.7;fill:#ffffff;fill-opacity:0.4;stroke:#ffffff;stroke-width:11;stroke-dasharray:none;stroke-opacity:1"
+     inkscape:highlight-color="#72b4cd"
+     transform="translate(-6.62183,-7.3564835)">
+    <circle
+       style="opacity:1;fill:#ffffff;fill-opacity:0.4;stroke:#ffffff;stroke-width:11;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path68878"
+       cx="54.180908"
+       cy="54.915562"
+       r="42.059078" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2"
+     style="display:inline;opacity:1;fill:#ffffff;fill-opacity:0.4;stroke:#ffffff;stroke-width:11;stroke-dasharray:none;stroke-opacity:1"
+     transform="translate(-6.62183,-7.3564835)">
+    <circle
+       style="opacity:1;fill:#ffffff;fill-opacity:0.4;stroke:#ffffff;stroke-width:0;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path82898"
+       cx="67.037399"
+       cy="39.85511"
+       r="9.5505333" />
+  </g>
+</svg>

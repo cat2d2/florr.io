@@ -1,0 +1,22 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+    max-width: 100%;
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+/* Ubuntu for main elements (not including logs, etc.) */
+* {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    fill: #fff;
+    text-shadow: -1px -1px 0 #444, 1px -1px 0 #444, -1px 1px 0 #444, 1px 1px 0 #444; /* creates a #444 outline */
+}
+/* inline 
+body {
+    color: #fff;
+} */

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="114.69028mm"
+   height="73.116875mm"
+   viewBox="0 0 114.69028 73.116877"
+   version="1.1"
+   id="svg10630"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="dandelion.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview10632"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.75455247"
+     inkscape:cx="182.22722"
+     inkscape:cy="270.35893"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer2" />
+  <defs
+     id="defs10627">
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern2114"
+       id="pattern2846"
+       patternTransform="matrix(0.26458333,0,0,0.26458333,77.500991,-162.18929)" />
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="276.34727"
+       height="433.47511"
+       patternTransform="translate(-1.6387796e-6)"
+       id="pattern2114">
+      <path
+         style="fill:#ffffff;fill-opacity:1;stroke:#292929;stroke-width:75.5906;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         d="M 138.17308,201.39482 V 396.21057 Z"
+         id="path14853" />
+      <circle
+         style="fill:#ffffff;fill-opacity:1;stroke:#cfcfcf;stroke-width:37.7953;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         id="path12255"
+         cx="138.17363"
+         cy="138.17363"
+         r="119.276" />
+    </pattern>
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="图层 2"
+     transform="translate(-47.499008,-77.500992)">
+    <rect
+       style="fill:url(#pattern2846);stroke:none;stroke-width:0.264583"
+       transform="rotate(90)"
+       width="73.116875"
+       height="114.69028"
+       x="77.500992"
+       y="-162.18929"
+       id="rect2118" />
+  </g>
+  <g
+     inkscape:label="图层 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-47.499008,-77.500992)" />
+</svg>

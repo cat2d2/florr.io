@@ -1,0 +1,8 @@
+pillow~=9.5.0
+pyautogui
+pytesseract~=0.3.10
+screeninfo~=0.8.1
+PySide6~=6.5.1.1
+setuptools~=67.8.0
+pyobjc
+Foundation
