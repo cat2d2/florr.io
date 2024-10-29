@@ -7,6 +7,7 @@
 </p>
 
 ## Any forks of this repository must be open sourced, distributing public versions of these hacks without being fully open sourced is illegal.
+# Introducing premium! Join the [Discord](https://discord.gg/m4DefhCemY) for more info. Trending packages include **0 second super spawn alerts! Not player reported, running 24/7**.
 
 - ***This repository can get your account banned, use with extreme caution***
 
