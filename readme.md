@@ -10,6 +10,7 @@
 # Introducing premium! Join the [Discord](https://discord.gg/m4DefhCemY) for more info. Trending packages include **0 second super spawn alerts! Not player reported, running 24/7**.
 
 ![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/cat2d2/florr.io&title=views)
+This repository was made on 10/29/2024 but I wrote a lot of the code months ago. (Hence dependabot spam PR)
 
 - ***This repository can get your account banned, use with extreme caution***
 
