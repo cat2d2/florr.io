@@ -9,7 +9,7 @@
 ## Any forks of this repository must be open sourced, distributing public versions of these hacks without being fully open sourced is illegal.
 # Introducing premium! Join the [Discord](https://discord.gg/m4DefhCemY) for more info. Trending packages include **0 second super spawn alerts! Not player reported, running 24/7**.
 
-![Visitor Badge](https://visitor-badge.glitch.me/badge?page_id=cat2d2.florr.io)
+![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/cat2d2/florr.io&title=views)
 
 - ***This repository can get your account banned, use with extreme caution***
 
