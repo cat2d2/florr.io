@@ -41,8 +41,12 @@ If you don't have the prerequisites, do this.
    npm install
    npm run dev
    ```
-2. Then open the port!
+2. Then open the (forwarded) port!
 
+### *✨Terminal Tips!*
+- When running commands in a terminal, run them one at a time. Each new line is a new command.
+- When running commands in a terminal, don't use a slash prefix. It's not MineCraft you little kids.
+- Use `ctrl` + `shift` + ` to open your terminal like a pro! (Then join the Discord and buy my coding courses to become a real pro.)
 ## 🚀 Getting Started
 
 All these scripts use Tampermonkey, so you'll need to install it.
