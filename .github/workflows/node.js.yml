@@ -26,8 +26,7 @@ jobs:
         run: |
           cd chinese-anthos
           npm install
-          npm run build  # Adjust if needed to match the build command
-
+          npm run dev
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

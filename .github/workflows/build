@@ -31,7 +31,7 @@ jobs:
       - name: Build the project
         run: |
           cd chinese-anthos
-          npm run build
+          npm run dev
 
       # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
