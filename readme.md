@@ -9,6 +9,8 @@
 ## Any forks of this repository must be open sourced, distributing public versions of these hacks without being fully open sourced is illegal.
 # Introducing premium! Join the [Discord](https://discord.gg/m4DefhCemY) for more info. Trending packages include **0 second super spawn alerts! Not player reported, running 24/7**.
 
+
+![View Count](https://img.shields.io/badge/dynamic/json?label=Views&query=count&url=https://api.github.com/repos/cat2d2/florr.io/traffic/views)
 - ***This repository can get your account banned, use with extreme caution***
 
 - *WGB means "won't get you banned"*
