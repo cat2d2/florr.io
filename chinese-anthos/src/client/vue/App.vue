@@ -483,7 +483,8 @@ function onDisconnect() {
 </script>
 <template>
 	<Block :props="attr.title">
-		<Title size="10">real_florrio</Title>
+		<Title size="10">PvP Florr.io (kit2d2)</Title>
+		<Title size="5"><a href="https://discord.gg/m4DefhCemY">Discord</a></Title>
 	</Block>
 	<Block :props="attr.button_back">
 		<Button @click="onBack" :disabled="!selectedMode">Back</Button>
