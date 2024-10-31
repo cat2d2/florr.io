@@ -1,4 +1,5 @@
 import Constants from '../../shared/constants.js';
+import crypto from 'crypto';
 import EntityAttributes from '../../../public/entity_attributes.js';
 import PetalAttributes from '../../../public/petal_attributes.js';
 import Player from './entity/player.js';
@@ -1523,7 +1524,9 @@ class Game {
 	// other functions
 
 	rnd(x, y) { // returns a random number in range [x, y]
-		return ((Math.random() * y) + x);
+		const randomBuffer = crypto.randomBytes(4);
+		const randomNumber = randomBuffer.readUInt32BE(0) / 0xFFFFFFFF;
+		return (randomNumber * (y - x)) + x;
 	}
 	
 	getChunkID(chunk) { // gets the ID of the chunk
