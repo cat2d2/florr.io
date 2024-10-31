@@ -1,10 +1,10 @@
 Welcome! This repository includes tools and scripts for various **Florr.io hacks**, designed to improve your Florr.io experience with easy-to-use and customizable cheats. Here, you’ll find **Florrio hacks** like tracers, auto grind, anti-AFK, and more to enhance gameplay. It contains **Florr.io cheats**. **Florrio cheats** can be very helpful to your **Florr.io gameplay** 🫠. 
 ### Keywords
-**Florr.io hack**
-**Florrio hack**
-**Florr.io hacking**
-**Florrio hacking**
-This readme.md file will be cleaned up once it's SEO verified or something.
+> - **Florr.io hack**
+> - **Florrio hack**
+> - **Florr.io hacking**
+> - **Florrio hacking**
+### This readme.md file will be cleaned up once it's SEO verified or something.
 
 
 <p align="center">
