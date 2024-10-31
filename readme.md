@@ -8,7 +8,6 @@ Welcome! This repository includes tools and scripts for various **Florr.io hacks
 > - **Florrio hacking**
 ### This readme.md file will be cleaned up once it's SEO verified or something.
 
-
 <p align="center">
   <img src="images/flower.webp" width="30" height="30">
   <a href="https://git.io/typing-svg">
