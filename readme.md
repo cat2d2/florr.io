@@ -123,7 +123,7 @@ If you encounter any issues or have any questions, please open an issue on this 
 
 ## 📞 Contact
 
-For any direct inquiries, you can contact me via email at [azelifyofficial@gmail.com](mailto:azelifyofficial@gmail.com), via Discord `kit2d2`, or make an issue on this repository.
+For any direct inquiries, you can contact me via email at [azelifyofficial@gmail.com](mailto:azelifyofficial@gmail.com) and [cat@fatherless.dad](mailto:cat@fatherless.dad), via Discord (`kit2d2`), or make an issue on this repository. It would be better to join the [Discord](https://discord.gg/MqvmBu5tWa) due to the outrageous amounts of friends requests I have.
 
 ---
 
