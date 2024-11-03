@@ -26,6 +26,9 @@ This repository was made on 10/29/2024 but I wrote a lot of the code months ago.
 
 - *WGB means "won't get you banned"*
 
+### Scan me to go to this repositories website :) 
+> Or click [here](https://florr.vercel.app)
+  <img src="images/qr-code.png" width="150">
 ## Table of Contents
 [Chinese Anthos](#-build-instructions)
 1. [Getting Started](#-getting-started)
