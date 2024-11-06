@@ -14,9 +14,6 @@ html, body {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 700;
     fill: #fff;
-    text-shadow: -1px -1px 0 #444, 1px -1px 0 #444, -1px 1px 0 #444, 1px 1px 0 #444; /* creates a #444 outline */
+    text-shadow: 2px 2px 4px #444;
 }
-/* inline 
-body {
-    color: #fff;
-} */
+
