@@ -1750,34 +1750,66 @@ xorps xmm0,xmm0
       </Elements>
     </Structure>
   </Structures>
-  <Comments>1.碰撞、生物行动：
-使用空指令替换/还原代码
-2.本体血量、花瓣血量,花瓣数：
-使用查找代码读取的地址找到并修改,本体血量也可用于查看出现变动的生物血量
-3.花瓣血量额外操作：查找代码读取的地址找到并修改为0，然后再改为99999，在这个血量耗尽前你将拥有两倍的花瓣，关闭再重复以上过程，你将拥有任意多的花瓣
-4.生物生成：
-注意，要想很好的使用这个功能，你需要具备一些汇编知识
-默认生成巨甲虫egg。
-双击即可修改
-如要让全场生物生成同一种，删去第11，12行
-第13行 mov rbx，d，d为生物代码（hex），不能填入蚁穴，蜈蚣头部，使用egg时必须填入可移动生物
-如要让egg、蚁穴、蜈蚣生成指定生物，修改第11行
-cmp r14,FFFFFFFFFFFF4328为
-cmp r8,FFFFFFFFFFFFFFFF
-r8=FFFFFFFFFFFFFFFF为蚁穴生成物，蜈蚣身体
-r8=0000000000000006为自然生物
-r14=FFFFFFFFFFFF4328为玩家阵营生物
-5.实体坐标x/y：
-首先空指令覆盖生物行动，然后查看实体坐标x/y代码改写的地址，朝x/y运动可以让坐标地址出现在对应的代码读取列表里，其中会有几个一直变动的值，那是花瓣的坐标，修改本体坐标后会看见视角过来了但是身体好像没过来，左右运动下即可（因为本体坐标包含三个部分，分别是视角坐标、实体坐标、图片坐标、而在此修改的是实体坐标，至于为什么另外两个不放代码表，因为没有必要，实体坐标修改后另外两个很快就会同步，如有需要，浮点数搜索即可找到其他两个坐标）
-6.额外视野除数：
-激活额外视野可用，数值越小，视野越大
-7.花瓣位置
-让花瓣使用堆叠坐标
-8.花瓣数量
-找出代码读写的地址，使花瓣冷却即可看到被冷却花瓣的堆叠数量，修改会让花瓣图片和生成的花瓣数量产生变化（花瓣目前最高只能生成3，不知道为啥，但是图片可以无限增高）将所得到的地址减去8，得到的地址为花瓣稀有度，0为绿，1为黄，2为蓝，3为紫，4为红，5为粉，修改会让稀有度发生变化
-9.花瓣堆叠
-找出代码读写的地址，得到的地址中，0为普通状态，1为堆叠状态，修改后某个花瓣会变为普通/堆叠
-10.实体攻击
-找出代码读写的地址，然后让想修改的实体发生碰撞，再找到改写这个地址的代码，显示反汇编程序，修改汇编码即可
+<Comments>
+1. Collision and Biological Movement:
+   Use a blank instruction to replace or restore code.
+
+2. Main Health, Petal Health, and Number of Petals:
+   Locate and modify these values by finding the address from the read code.
+   Main health can also be used to monitor health changes in various entities.
+
+3. Additional Operations on Petal Health:
+   Find and set the read address for petal health to 0, then change it to 99999.
+   Before this health depletes, you will have double the petals. Turn it off and
+   repeat the above process to acquire any number of petals.
+
+4. Entity Generation:
+   Note: Some assembly knowledge is required to use this feature effectively.
+   The default entity generated is the giant beetle egg.
+   Double-click to modify it.
+   To make all entities the same type, delete lines 11 and 12.
+   In line 13, set `mov rbx, d`, where `d` is the entity code (in hex).
+   Do not input ant nests or centipede heads, and when using eggs, only mobile
+   entities should be specified.
+   To spawn a specified entity from eggs, ant nests, or centipedes, modify line 11 as follows:
+     - `cmp r14,FFFFFFFFFFFF4328` to `cmp r8,FFFFFFFFFFFFFFFF`.
+     - `r8=FFFFFFFFFFFFFFFF` for nest or centipede body generation.
+     - `r8=0000000000000006` for natural entities.
+     - `r14=FFFFFFFFFFFF4328` for player faction entities.
+
+5. Entity Coordinates x/y:
+   First, overwrite the entity movement with a blank instruction, then check the
+   code modifying the x/y coordinate address. Moving along x/y will reveal the
+   coordinate address in the code read list. Among the values constantly changing,
+   petal coordinates will appear. After modifying the main entity's coordinates,
+   you'll see the viewpoint shift, but the body may not move; move left or right
+   to sync (since main coordinates involve three components: viewpoint, entity,
+   and image coordinates. This modifies only the entity coordinates. The other
+   two will quickly sync, or if needed, you can use floating-point searches to locate them).
+
+6. Additional View Radius Divisor:
+   Activate additional view, and the smaller the value, the larger the field of view.
+
+7. Petal Position:
+   Stack petals at the same coordinates.
+
+8. Number of Petals:
+   Find the address read by the code to make the petal cooldown visible, showing
+   the stacked petal count. Modifying it will affect both the petal image and the
+   number generated (the maximum generated is currently 3, though the image can
+   be increased indefinitely). Subtract 8 from the found address to obtain petal
+   rarity: 0 is green, 1 is yellow, 2 is blue, 3 is purple, 4 is red, and 5 is pink.
+   Modifying this value will change the rarity.
+
+9. Petal Stacking:
+   Find the address read by the code, where 0 represents normal status and 1
+   represents stacked status. After modification, a petal will switch between
+   normal and stacked states.
+
+10. Entity Attack:
+    Find the address read by the code, then have the entity you want to modify
+    collide with something, then locate the code that modifies this address.
+    Display the disassembler and modify the assembly code.
 </Comments>
+
 </CheatTable>
