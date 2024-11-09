@@ -9,7 +9,7 @@ let debugOptions =
 	];
 
 export function setCmdLayer() {
-	document.getElementById("cmd-input").style['z-index'] = UILayer[0];
+	document.getElementById("cmd-input").style['z-index'] = UILayer[1];
 }
 
 export function setCmdColor(color) {

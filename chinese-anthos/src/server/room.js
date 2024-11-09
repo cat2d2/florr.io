@@ -451,11 +451,18 @@ function updSettings(socket, type, update) {
 			};
 		} else if ( kit == 7 ) { // Overlord
 			room.settings.kit_info = {
-				size: 5,
+				size: 8,
 				primary: ['triple_stinger', 'triple_stinger', 'triple_stinger', 'triple_cactus', 'epic_rose', 'triple_cactus', 'epic_rose', 'bubble'],
 				secondary: [],
 			};
+		} else if ( kit == 8 ) { // Spammer!
+			room.settings.kit_info = {
+				size: 5,
+				primary: ['pollen', 'legendary_peas', 'pollen', 'missile', 'epic_rose', 'pollen', 'bubble', 'bubble'],
+				secondary: [],
+			};
 		}
+		
 		room.update(12, {kit: update.kit}, socket.id);
 	}
 }

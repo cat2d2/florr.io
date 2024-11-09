@@ -483,9 +483,10 @@ function onDisconnect() {
 </script>
 <template>
 	<Block :props="attr.title">
-		<Title size="10">PvP Florr.io (kit2d2)</Title>
-		<Title size="5"><a href="https://discord.gg/m4DefhCemY">Discord</a></Title>
+		<Title size="10">Florr.io PvP</Title>
+		<Title size="3">Made by kit2d2</Title>
 	</Block>
+	<a href="https://discord.gg/m4DefhCemY" target="_blank" class="discord-icon"></a>
 	<Block :props="attr.button_back">
 		<Button @click="onBack" :disabled="!selectedMode">Back</Button>
 	</Block>
@@ -493,8 +494,8 @@ function onDisconnect() {
 		<Button @click="onSelectArena" :disabled="selectedMode">Arena</Button>
 	</Block>
 	<Block :props="attr.username_input">
-		<Text size="2">This pretty little flower is called...</Text>
-		<input class="input" v-model="username" placeholder="Random Flower" maxlength="20" :disabled="state == 2"/>
+		<Text size="2">This fighting flower is called...</Text>
+		<input class="input" v-model="username" placeholder="Name Yourself!" maxlength="20" :disabled="state == 2"/>
 	</Block>
 	<Block :props="attr.log" style="width: 15%">
 		<template v-for="log in logs">
@@ -562,6 +563,7 @@ function onDisconnect() {
 			<option value="5">Archer</option>
 			<option value="6">Archer Simple</option>
 			<option value="7">Overlord</option>
+			<option value="8">Pollinator</option>
 		</select>
 	</Block>
 	<canvas id="canvas" class="canvas" :class="{hidden: state != 2}"></canvas>
@@ -604,6 +606,25 @@ function onDisconnect() {
 }
 
 .input {
-	transform:translate(-50%, -50%);
+	transform:translate(-51%, -10%);
 }
+.discord-icon {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 5000px;
+	height: 5000px;
+	z-index: 10;
+}
+
+/*.discord-icon img {
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	transition: transform 0.2s ease-in-out;
+}
+
+.discord-icon img:hover {
+	transform: scale(1.1);
+}*/
 </style>
