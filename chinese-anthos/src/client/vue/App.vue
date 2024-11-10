@@ -486,7 +486,7 @@ function onDisconnect() {
 		<Title size="10">Florr.io PvP</Title>
 		<Title size="3">Made by kit2d2</Title>
 	</Block>
-	<a href="https://discord.gg/m4DefhCemY" target="_blank" class="discord-icon"></a>
+	<a href="https://discord.gg/m4DefhCemY" target="_blank" class="discord-icon"><img class="discord-icon img"></a>
 	<Block :props="attr.button_back">
 		<Button @click="onBack" :disabled="!selectedMode">Back</Button>
 	</Block>
@@ -612,12 +612,12 @@ function onDisconnect() {
 	position: absolute;
 	top: 20px;
 	right: 20px;
-	width: 5000px;
-	height: 5000px;
+	width: 10px;
+	height: 10px;
 	z-index: 10;
 }
 
-/*.discord-icon img {
+.discord-icon img {
 	width: 100%;
 	height: 100%;
 	cursor: pointer;
@@ -626,5 +626,5 @@ function onDisconnect() {
 
 .discord-icon img:hover {
 	transform: scale(1.1);
-}*/
+}
 </style>
