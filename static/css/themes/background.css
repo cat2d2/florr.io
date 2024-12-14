@@ -1,0 +1,14 @@
+/* Theme */
+
+main {
+	background: linear-gradient(-40deg, #af4fec 0%, #d753ad 70%, #eb6078 100%);
+	color: #FAFAFA;
+}
+
+.icons-social a {
+	color: #FAFAFA;
+}
+
+.icons-social a svg path{
+	fill: linear-gradient(-40deg, #af4fec 0%, #d753ad 70%, #eb6078 100%);
+}

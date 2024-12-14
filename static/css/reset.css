@@ -1,0 +1,38 @@
+/* Minimal CSS Reset */
+
+html {
+  box-sizing: border-box;
+  font-size: 12px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+/* Theme */
+
+main {
+	background: linear-gradient(-40deg, #af4fec 0%, #d753ad 70%, #eb6078 100%);
+	color: #FAFAFA;
+}
+
+.icons-social a {
+	color: #FAFAFA;
+}
+
+.icons-social a svg path{
+	fill: linear-gradient(-40deg, #af4fec 0%, #d753ad 70%, #eb6078 100%);
+}
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

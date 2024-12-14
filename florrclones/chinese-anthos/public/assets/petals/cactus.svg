@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="42.083786mm"
+   height="42.075981mm"
+   viewBox="0 0 42.083786 42.075981"
+   version="1.1"
+   id="svg15363"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="cactus.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview15365"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="3.0182099"
+     inkscape:cx="84.321505"
+     inkscape:cy="87.469066"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs15360" />
+  <g
+     inkscape:label="图层 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-94.875098,-115.83212)">
+    <path
+       id="path20208"
+       style="fill:#38c75f;fill-opacity:1;stroke:#2da14d;stroke-width:4;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:transform-center-x="1.4603465e-06"
+       inkscape:transform-center-y="-1.7243021e-06"
+       d="m 115.52539,118.28906 c -3.43367,3.35672 -8.24527,5.25956 -13.04687,5.13867 0.29582,5.01345 -1.97537,9.98689 -5.60352,13.38868 3.80381,3.32676 5.65457,8.49533 5.55078,13.47656 5.03616,-0.31747 10.02054,1.98482 13.44336,5.61523 3.32838,-3.796 8.48946,-5.67207 13.47266,-5.54687 -0.32611,-5.04027 1.98746,-10.02554 5.61718,-13.45117 -3.79421,-3.33138 -5.6941,-8.49071 -5.54492,-13.48047 -5.03595,0.33343 -10.0264,-1.96754 -13.44922,-5.59766 -0.14648,0.15234 -0.29297,0.30469 -0.43945,0.45703 z" />
+    <circle
+       style="fill:#74d68f;fill-opacity:1;stroke:#2da14d;stroke-width:0;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="path23198"
+       cx="115.91718"
+       cy="136.87018"
+       r="10.431818" />
+  </g>
+</svg>
