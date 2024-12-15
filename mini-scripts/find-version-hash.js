@@ -6,6 +6,6 @@ Array.from(document.scripts)
             console.log(hash[1]);
         }
     });
-// Made by me, log in console to find hash if super-petals.js doesn't work, then replace the updated hash with the old hash.
-// If you ever have to use this to update super-petals.js, ping me on Discord or make a PR to fix it.
+// Made by me, log in console to find hash if sandbox.js or count-all-petals.js doesn't work, then replace the updated hash with the old hash.
+// If you ever have to use this to update sandbox.js or count-all-petals.js, ping me on Discord or make a PR to fix it.
 // I'm way too lazy to make a bot and pay money to host it to like update this and all so yes here you go!
