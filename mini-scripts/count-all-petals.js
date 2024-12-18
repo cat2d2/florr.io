@@ -1,10 +1,10 @@
 // Counts all the petals you have so you can feel like a sigma
-
+// ty to k2niqr
 (async () => {
 
 	const currentVersionHash = (await (await fetch("https://florr.io")).text()).match(/const\sversionHash\s=\s"(.*)";/)[1];
-	if (currentVersionHash !== "49908e5304c41dce4b7fe0a678993614a1b04947") {
-		console.error("Versionhash error.");
+	if (currentVersionHash !== "1c848835adc17e189c2b6c8b79d2a0f76cf92271") {
+		console.error("You seem to be running the script for an outdated client. Run the latest script.");
 		return;
 	}
 
@@ -22,24 +22,34 @@
 		return textDecoder.decode(buffer);
 	}
 
-	const kMaxRarities = 9;
+	const rarityNames = ["Common", "Unusual", "Rare", "Epic", "Legendary", "Mythic", "Ultra", "Super", "Unique"];
+	const kMaxRarities = rarityNames.length;
+
 	const kMaxPetals = 89;
-	const petalInventoryBaseAddress = 3190120;
-	const petalDefinitionNameBaseAddress = 1953464;
+
+	const petalInventoryBaseAddress = 2037472;
+	const petalDefinitionNameBaseAddress = 1953560;
 
 	const petals = {};
-	const totals = new Array(kMaxRarities).fill(0);
+	const totals = {};
+	rarityNames.forEach((rarityName) => {
+		totals[rarityName] = 0;
+	});
 
 	for (let petalIndex = 1; petalIndex <= kMaxPetals; petalIndex++) {
 
 		const petalNameAddress = Module.HEAPU32[(petalDefinitionNameBaseAddress + ((6 << 2) * petalIndex)) >> 2];
 		const petalName = readStringInDataSection(petalNameAddress);
 
-		const amounts = new Array();
+		const amounts = {};
+		rarityNames.forEach((rarityName) => {
+			amounts[rarityName] = 0;
+		});
+
 		for (let rarityIndex = 0; rarityIndex < kMaxRarities; rarityIndex++) {
 			const amount = Module.HEAPU32[(petalInventoryBaseAddress + ((petalIndex * kMaxRarities + rarityIndex) << 2)) >> 2];
-			amounts.push(amount);
-			totals[rarityIndex] += amount;
+			amounts[rarityNames[rarityIndex]] = amount;
+			totals[rarityNames[rarityIndex]] += amount;
 		}
 		petals[petalName] = amounts;
 
