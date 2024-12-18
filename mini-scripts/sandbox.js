@@ -7,7 +7,7 @@
 (async () => {
 
 	const currentVersionHash = (await (await fetch("https://florr.io")).text()).match(/const\sversionHash\s=\s"(.*)";/)[1];
-	if (currentVersionHash !== "49908e5304c41dce4b7fe0a678993614a1b04947") {
+	if (currentVersionHash !== "1c848835adc17e189c2b6c8b79d2a0f76cf92271") {
 		console.error("Versionhash error. (Tell this to kit2d2 on discord)");
 		return;
 	}
