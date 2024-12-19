@@ -3,7 +3,7 @@
 (async () => {
 
 	const currentVersionHash = (await (await fetch("https://florr.io")).text()).match(/const\sversionHash\s=\s"(.*)";/)[1];
-	if (currentVersionHash !== "1c848835adc17e189c2b6c8b79d2a0f76cf92271") {
+	if (currentVersionHash !== "10d55f31e0aa739db08de2f8f05fd0c95bffb325") {
 		console.error("You seem to be running the script for an outdated client. Run the latest script.");
 		return;
 	}
@@ -27,8 +27,8 @@
 
 	const kMaxPetals = 89;
 
-	const petalInventoryBaseAddress = 2037472;
-	const petalDefinitionNameBaseAddress = 1953560;
+	const petalInventoryBaseAddress = 18227168;
+	const petalDefinitionNameBaseAddress = 1941528;
 
 	const petals = {};
 	const totals = {};
