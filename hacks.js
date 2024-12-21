@@ -2,13 +2,1294 @@
 // @name         florrehoh hackering
 // @namespace    http://tampermonkey.net/
 // @version      1.1
-// @description  hackering florrio. Ma
-// @author       @kit2d2
+// @description  take over the florr.io better now!
+// @author       m28 (so real)
 // @match        https://florr.io/*
 // @icon         data:image/gif;base64,R0lGODlhIAAgAPcAABgTDxsWFB0ZFh0bGRUSEyIeGyQgHiskHTAnHislIS0pJS4sKDEqIjMuKzgtJTYyLjo0LDYzMTs2MT05NEE8LUM9NUM/OUo+NUVBO0pEPElAN1JIPkxGQUxKREdEQFJLRFNNSFtMQ1RSTFtUTVZUUlpWVFxbVV1cWVdYU2JdVmZcVWNWS2JhV2ViW2xkXHFhWG1rZW1mYnxrZHVsanZqZHtyZnJxa313bHVxZXp3cYNyX4Jtaot5ZIR0aoV6b4p6a4R1ZJF7aoV9cYt9dYR+eIh7eJF8dJJ6dqF+dZSDbYuDdYyFfIiFfJGAc5mGdZyKdJOJfJmKe5SFe5mQeqSOfKKTfIyKhZaHgpyNg5KPjJSJgp6Si5yZi5eRg56akrGChqOTg6WZhKKViqWai6ybjKqUg7SeibaZh7uLlK2XkqWdk6ydk6uZmrmZl62ijrCjjrikja2jlK2km6mnnbOklLujlrSlm7Wqnbytnbihnr6wnraxmKytqbqsobSuqbOoo72zpLe1rr20rbewo7y4s8SZm8KjlMKvncW1nMaWosSjqcCpqMKzo8S5pcu9psO1q8O6rMy8rM63qtC8r8mussW9s8u+tMO/ucq0ttKttL3Bvc3Drc7DpNLDqtrGq9TIrtbFqszDtMXDvcvEutPEtNTKtd3MtdTGutnOv9XJu9bRvdzRveLLr+TPtta7xOK6xcTHw8rKxMzOysrJwtTNxdrOwtbJyc7QzNzTxdPRy93Vy97azdLUxtTW09ba1d3a093e29vR1OLWxOLazeLc1eLf2t3g2+Pi3Onk3Ojk1+De4N7i4uPk4+nm4ufq5+rq5evt6ufr6+7w7fLy7u/z9fL08vb59v39+wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAgACAAAAj/AAcUMJBAgQIDAw0oNDCgocOHAwQEABCgoQACDCBU0FABAoQGIEOCXEDSoIIFCQwcQHDAgUcIBiRszFBhgoaPInM2IEkygcYLGTJQYFCgQoWgNDNMeBChaYQHUKM+aPBgI4gPGSAwOIAwAwevNLFOGEt2ggQJHo9+2JBhg4SdcCFoACHCwsYRHSxYwKBX78YOIALTlCnVQoMEHzRw+GDhQwsRGDx4yIABg4bIHT5w0FvZglkJSz98eARlxIfMMFJ4+ACig+vXHbxycC3ZswkYXgRtiRQJUJwaLXDAGDGiRAkTJJInFyGiwwgRJjKAyDEIEiQxQ/A02n6nxw0cLsK3/zhhwoTxEyVSwHChIoUKOaEaPSJNAw+kR4zwjIEiRAgUNVxwMYcXWfBBiB9zqLJHHFM0sgkjjNyxhhIrkIEHhPqF8cYhjqSySzLIHMNMNdVA88wupZTyCSeIOILHGmL0cIEZF0KoByKcsOIJKck844wz0JS4DDPBhKLKKp90sgkgdoihggZO2HGhI5104oknn5RyzI/QSGONM774kgsvu6iS5CeRMCJGCBkkEcYmpJjSSiummIIKLsQ0A82e0AATSyyw5ELLKJuEUqggXTT3BB3C4GKKJ4jAEUcfkAzzDJ/H+CJLLJrMkcUSSkDhBiCRjGGCCEm8IcwqpjgShQ83xP9QQyjTVDMNNMwA00svfMDQQgswiFHJI5XMwYIIVeghjDDDgBhLIIFcQkuttzLDjDHAwKKJKLAAA40yuYwCCRMo0IGLLsMgc6k117RrDZ/NFHNML74wQ4011ESzjC+xCCKHGiQwMszAyQAJTa0kQtMMMbY0fEm30TCzjK6iEHLHGFzAwOgw5/qyZZDTSONMMIvk0UYaW8wBzDIT9/LsHGuE0YUNZKSCCy6nQJKLntAY/MsRQMtABCGzyCLLLb2IMocaaoghRApg9FFLLZbcUQkyzRxTDDC/0LLGDjL0QMgo0YoiyiyXMC3HGkTkEIYdtNASCiCV6EIMMb/kMgsgaxz/IcMWgvjxhx8IyiHGFmKosUUMJ1ShBi3E1EKsJaNY8kgfdqxxRREuFLHFFVpIgYUYY6yBxelLzGCDEktcgowullhCyiOL1FGGET3sMMMMPsxAwwtANAEGHWCsQYYaPkyAQQ5WiIIMMbrUcsokktRBRRBSsKH9H2ykYYQMP0QhBh1i2NHHEB1MwAQRojzzyy64kBKJI4eYUUYmmCxCCSb8p/GDEU0YwvjIsAYfsAADLLCBLOLFsVDkBw+GMEQmFKGI/bnCFW1Iwg968AMnkIEOY6iBemBgBWAwUBeneAQe3GAGCSaiDRUMxisKwQMdAKGDYBheFCpjgyz4qBjRq4X8RRhhhjMUIhFoQIMibPGKL9iQB0l4QhXC4AY7iCACNrACkJKhC1xMDRWpaEQd2tAGNHyhDYkoBBJ4EIQoUkFDdLhDCiIQEAA7
 // @grant        none
 // @run-at       document-start
 // @require      https://unpkg.com/string-similarity@4.0.4/umd/string-similarity.min.js
+// @license      AGPL
 // ==/UserScript==
-// i actually forgot why i obfuscated this lmao
-const _0x4be2d2=_0x2733;(function(_0x3c4284,_0x577780){const _0x2ccd91=_0x2733,_0xc25de8=_0x3c4284();while(!![]){try{const _0x24f0ca=parseInt(_0x2ccd91(0x2b8))/0x1+parseInt(_0x2ccd91(0x1fb))/0x2*(-parseInt(_0x2ccd91(0x248))/0x3)+-parseInt(_0x2ccd91(0x33b))/0x4*(-parseInt(_0x2ccd91(0x28c))/0x5)+-parseInt(_0x2ccd91(0x2c2))/0x6+parseInt(_0x2ccd91(0x201))/0x7+-parseInt(_0x2ccd91(0x323))/0x8+parseInt(_0x2ccd91(0x2d6))/0x9*(parseInt(_0x2ccd91(0x2b3))/0xa);if(_0x24f0ca===_0x577780)break;else _0xc25de8['push'](_0xc25de8['shift']());}catch(_0x1c9174){_0xc25de8['push'](_0xc25de8['shift']());}}}(_0x36ad,0xea053),(function(){'use strict';const _0x1d755b=_0x2733;const _0x1693ea={'autoRespawn':{'enabled':0x1,'spawnBiome':'Garden'},'bypassAfkCheck':{'movementCheck':0x1,'afkButton':0x1},'autoGrind':{'enabled':0x1},'tracers':0x1};let _0x5eec04=0x0,_0x1d4359=0x0;const _0x1891fb={'_log':window[_0x1d755b(0x2c6)][_0x1d755b(0x33d)],'log':function(){const _0x24e16c=_0x1d755b;this[_0x24e16c(0x217)]('%c[https://github.com/kit2d2alt]',_0x24e16c(0x234),...arguments);}},_0x2eb039=function(_0x50f98e,_0x28db87){const _0x3a743a=_0x1d755b;let _0xbea529=_0x50f98e[_0x3a743a(0x202)],_0x2f3949=_0x50f98e[0x0][_0x3a743a(0x202)],_0x323888=_0x28db87[0x0][_0x3a743a(0x202)],_0x62c79=Array(_0xbea529);for(let _0x5adea6=0x0;_0x5adea6<_0xbea529;++_0x5adea6){let _0x1b4678=Array(_0x323888);_0x62c79[_0x5adea6]=_0x1b4678;let _0x4a8ac9=_0x50f98e[_0x5adea6];for(let _0x1b1c14=0x0;_0x1b1c14<_0x323888;++_0x1b1c14){let _0x2cdb01=0x0;for(let _0xbfe20c=0x0;_0xbfe20c<_0x2f3949;++_0xbfe20c)_0x2cdb01+=_0x4a8ac9[_0xbfe20c]*_0x28db87[_0xbfe20c][_0x1b1c14];_0x1b4678[_0x1b1c14]=_0x2cdb01;}}return _0x62c79;};let _0x2359f3=function(_0x593d3e,_0x14f0ab,_0x5adff5){const _0x41a6a2=_0x1d755b;return Reflect[_0x41a6a2(0x244)](_0x593d3e,_0x14f0ab,_0x5adff5);},_0x362f23=_0x2359f3,_0x5a5aa3={},_0x2ddfed=function(_0x46a56a,_0x1f4cad){const _0x3afede=_0x1d755b;!_0x1f4cad&&(_0x1f4cad=_0x3afede(0x216)),!_0x5a5aa3[_0x1f4cad]&&(_0x5a5aa3[_0x1f4cad]=[]),_0x5a5aa3[_0x1f4cad][_0x3afede(0x236)](_0x46a56a);},_0x3e4c49=[];const _0x3285fc=function(_0x589727){return[parseInt(_0x589727[0x1]+_0x589727[0x2],0x10),parseInt(_0x589727[0x3]+_0x589727[0x4],0x10),parseInt(_0x589727[0x5]+_0x589727[0x6],0x10)];};let _0x5a2dbd={'dx':0x0,'dy':0x0};const _0x24c8a1=function(){const _0x2253aa=_0x1d755b,_0x329823=document[_0x2253aa(0x255)]('canvas');_0x329823[_0x2253aa(0x1f7)]('mousemove',function(_0x1a4db3){const _0x14f638=_0x2253aa;_0x5a2dbd['dx']=_0x1a4db3[_0x14f638(0x224)]-window[_0x14f638(0x229)]*0.5,_0x5a2dbd['dy']=_0x1a4db3[_0x14f638(0x21a)]-window[_0x14f638(0x298)]*0.5;});const _0x27f6a4=_0x329823[_0x2253aa(0x338)]('2d');_0x362f23=function(_0x23cb9e,_0x275e54,_0x1f71c7){const _0x249ac6=_0x2253aa;let _0x23224f=performance['now'](),_0x1c1830=_0x329823['width']*0.5,_0x35e16e=_0x329823[_0x249ac6(0x30f)]*0.5,_0x41a984=0x1/window[_0x249ac6(0x312)],_0x133b01=_0x1c1830*_0x41a984,_0x532fb9=_0x35e16e*_0x41a984;if(_0x1693ea[_0x249ac6(0x2df)][_0x249ac6(0x26d)]){let _0x21f811=![],_0xdf604e=-0x1;for(let _0x4a9f61=_0x3e4c49[_0x249ac6(0x202)]-0x1;_0x4a9f61>=0x0;_0x4a9f61--){let _0x52375e=_0x3e4c49[_0x4a9f61],_0x45cc08=_0x52375e[0x0]-_0x1c1830,_0xb1677d=_0x52375e[0x1]-_0x35e16e,_0x2c1373=_0x45cc08*_0x45cc08+_0xb1677d*_0xb1677d;(_0x2c1373<_0xdf604e||_0xdf604e<0x0)&&(_0xdf604e=_0x2c1373,_0x21f811=[_0x45cc08,_0xb1677d]);}if(_0x21f811){let _0x17a2e8=0x64*(_0xdf604e<0x1?0x1:0x1/Math[_0x249ac6(0x296)](_0xdf604e));_0x5a2dbd['dx']=_0x21f811[0x0]*_0x17a2e8,_0x5a2dbd['dy']=_0x21f811[0x1]*_0x17a2e8;}}(!_0x3a12c0[_0x249ac6(0x31c)]||!_0x1693ea[_0x249ac6(0x307)]['enabled'])&&(_0x5eec04=0x0);if(_0x23224f-_0x1d4359>0x64)_0x1d4359=_0x23224f,!(function(){const _0x1855f3=_0x249ac6;if(_0x1693ea['autoRespawn'][_0x1855f3(0x26d)]){if(_0x5eec04<0x1){if(_0x3a12c0[_0x1693ea[_0x1855f3(0x307)][_0x1855f3(0x1f3)]]){_0x47cec9(_0x1693ea['autoRespawn'][_0x1855f3(0x1f3)])&&_0x5eec04++;return;}}else{if(_0x3a12c0[_0x1855f3(0x31c)]){_0x47cec9(_0x1855f3(0x31c));return;}}_0x3a12c0[_0x1855f3(0x288)]&&(_0x47cec9(_0x1855f3(0x288)),_0x5eec04=0x0);}_0x1693ea['bypassAfkCheck'][_0x1855f3(0x23b)]&&_0x47cec9(_0x1855f3(0x2f0));}());else{if(!_0x3a12c0['Continue']&&(_0x1693ea['bypassAfkCheck'][_0x249ac6(0x2b2)]||_0x1693ea[_0x249ac6(0x2df)][_0x249ac6(0x26d)])){let _0x4cb203=_0x23224f/0x3e8%(0x2*Math['PI']),_0x4f48bc=_0x5a2dbd['dx']+_0x133b01+Math['sin'](_0x4cb203),_0x2ab4f7=_0x5a2dbd['dy']+_0x532fb9+Math[_0x249ac6(0x280)](_0x4cb203);_0x3bb21c[_0x249ac6(0x23d)]({'clientX':_0x4f48bc,'screenX':_0x4f48bc,'clientY':_0x2ab4f7,'screenY':_0x2ab4f7});}}let _0x2505b9=_0x27f6a4[_0x249ac6(0x2d0)]();_0x27f6a4[_0x249ac6(0x276)](_0x1c1830,_0x35e16e),_0x27f6a4['lineCap']=_0x249ac6(0x28b),_0x27f6a4[_0x249ac6(0x2aa)]=1.68,_0x27f6a4[_0x249ac6(0x297)]=_0x249ac6(0x294);for(let _0x50456b in _0x5a5aa3){let _0x3d2b98=_0x5a5aa3[_0x50456b];for(let _0xe3e6a5=_0x3d2b98['length']-0x1;_0xe3e6a5>=0x0;_0xe3e6a5--){let _0x443232=_0x3d2b98[_0xe3e6a5],_0x555786=0x1,_0x9b28f5=0x1;_0x443232[0x2]>0x3?_0x555786+=(_0x443232[0x2]-0x3)*0.5:_0x9b28f5=(_0x443232[0x2]+0x1)/0x4;let _0x3f52d8=_0x9b28f5;_0x9b28f5*=0.5;let _0x49580f=_0x3285fc(_0x50456b);_0x27f6a4[_0x249ac6(0x2d9)]='rgba('+_0x49580f[0x0]+',\x20'+_0x49580f[0x1]+',\x20'+_0x49580f[0x2]+',\x20'+_0x9b28f5+')',_0x27f6a4[_0x249ac6(0x30c)]([0xa,0xf]),_0x27f6a4['lineWidth']=_0x555786,_0x27f6a4[_0x249ac6(0x2e5)]();let _0x2bd5b5=_0x443232[0x0]-_0x1c1830,_0x10de13=_0x443232[0x1]-_0x35e16e;_0x27f6a4['_moveTo'](_0x2bd5b5,_0x10de13);let _0x5930b2=_0x2bd5b5*_0x2bd5b5+_0x10de13*_0x10de13;_0x27f6a4[_0x249ac6(0x322)](0x0,0x0),_0x27f6a4['_stroke'](),_0x9b28f5*=0.25,_0x27f6a4['strokeStyle']='rgba('+_0x49580f[0x0]+',\x20'+_0x49580f[0x1]+',\x20'+_0x49580f[0x2]+',\x20'+_0x9b28f5+')',_0x27f6a4[_0x249ac6(0x30c)]([]),_0x27f6a4[_0x249ac6(0x314)](),_0x27f6a4[_0x249ac6(0x23e)]();if(_0x5930b2>0x12c*0x12c){let _0x1a19be=Math[_0x249ac6(0x296)](_0x5930b2);_0x1a19be<0x15e&&(_0x3f52d8*=(_0x1a19be-0x12c)*0.02);if(_0x3f52d8>0.05){_0x5930b2=0x1/_0x1a19be;let _0x2824cd=0x12c+(_0x1a19be-0x12c)/(_0x1a19be-0x64)*0x64,_0x38ab0d=_0x2bd5b5*_0x5930b2*_0x2824cd,_0x2cda75=_0x10de13*_0x5930b2*_0x2824cd+0x7;_0x49580f[0x0]===0x0&&_0x49580f[0x1]===0x0&&_0x49580f[0x2]===0x0&&(_0x49580f[0x0]=_0x49580f[0x1]=_0x49580f[0x2]=0xff);_0x27f6a4['fillStyle']=_0x249ac6(0x231)+_0x49580f[0x0]+',\x20'+_0x49580f[0x1]+',\x20'+_0x49580f[0x2]+')',_0x27f6a4['strokeStyle']=_0x249ac6(0x216),_0x27f6a4['lineWidth']=1.68,_0x3f52d8*=_0x3f52d8;_0x3f52d8<0.95&&(_0x27f6a4[_0x249ac6(0x2fb)]=_0x3f52d8);let _0x2f9cb2=''+Math[_0x249ac6(0x28b)](_0x1a19be/0x64);_0x27f6a4['textAlign']=_0x249ac6(0x2d7),_0x27f6a4[_0x249ac6(0x26c)](_0x2f9cb2,_0x38ab0d,_0x2cda75),_0x27f6a4[_0x249ac6(0x209)]=0xa,_0x27f6a4[_0x249ac6(0x2da)](_0x2f9cb2,_0x38ab0d,_0x2cda75),_0x3f52d8<0.95&&(_0x27f6a4[_0x249ac6(0x2fb)]=0x1);}}}}_0x27f6a4[_0x249ac6(0x2d3)](_0x2505b9);let _0x4b9635=_0x1f71c7[0x0];return _0x4b9635[_0x249ac6(0x212)]?_0x1f71c7[0x0]=_0x4b9635[_0x249ac6(0x212)]:_0x1f71c7[0x0]=_0x4b9635[_0x249ac6(0x212)]=new Proxy(_0x4b9635,{'apply':function(_0x4b927c,_0x4cfbf5,_0x53bc57){const _0x372a46=_0x249ac6;return _0xa0469c=_0x3a12c0,_0x3a12c0={},_0x5a5aa3={},_0x3e4c49=[],window['l']=_0x3bb21c,window['b']=_0x3a12c0,Reflect[_0x372a46(0x244)](_0x4b927c,_0x4cfbf5,_0x53bc57);}}),Reflect[_0x249ac6(0x244)](_0x23cb9e,_0x275e54,_0x1f71c7);};};window[_0x1d755b(0x2c6)][_0x1d755b(0x33d)]=new Proxy(window[_0x1d755b(0x2c6)][_0x1d755b(0x33d)],{'apply':function(_0x485259,_0x39334c,_0x2eae1a){const _0x21484b=_0x1d755b;return Reflect[_0x21484b(0x244)](_0x485259,_0x39334c,_0x2eae1a);}});const _0x3cb840=function(_0x432385,_0x33cf99,_0x4ef19b){let _0x2b220e=_0x2eb039([[_0x432385,_0x33cf99,0x1]],[[_0x4ef19b['a'],_0x4ef19b['b'],0x0],[_0x4ef19b['c'],_0x4ef19b['d'],0x0],[_0x4ef19b['e'],_0x4ef19b['f'],0x1]])[0x0];return[_0x2b220e[0x0]/_0x2b220e[0x2],_0x2b220e[0x1]/_0x2b220e[0x2]];};let _0xc91862=[],_0x874de9=[],_0x3d22e7={'Common':{'name':_0x1d755b(0x222),'color':_0x1d755b(0x29c),'index':0x0},'Unusual':{'name':_0x1d755b(0x266),'color':'#ffe65d','index':0x1},'Rare':{'name':_0x1d755b(0x227),'color':_0x1d755b(0x340),'index':0x2},'Epic':{'name':_0x1d755b(0x24f),'color':_0x1d755b(0x327),'index':0x3},'Legendary':{'name':_0x1d755b(0x2be),'color':_0x1d755b(0x24d),'index':0x4},'Mythic':{'name':_0x1d755b(0x1f9),'color':_0x1d755b(0x271),'index':0x5},'Ultra':{'name':'Ultra','color':_0x1d755b(0x2e6),'index':0x6},'Super':{'name':'Super','color':'#000000','index':0x7}},_0xcd5294={};for(let _0x758b83 in _0x3d22e7){_0xcd5294[_0x3d22e7[_0x758b83][_0x1d755b(0x313)]]=_0x3d22e7[_0x758b83];}const _0x338109=function(_0x388825,_0x35ae34){const _0x344bb9=_0x1d755b;return _0x388825===_0x344bb9(0x2ef)&&(_0x388825=_0x344bb9(0x247)),_0x388825;};let _0x3a12c0={},_0xa0469c={};window['CanvasRenderingContext2D'][_0x1d755b(0x2ea)]['_measureText']=window[_0x1d755b(0x2c5)][_0x1d755b(0x2ea)][_0x1d755b(0x205)],window[_0x1d755b(0x2c5)][_0x1d755b(0x2ea)]['measureText']=new Proxy(window[_0x1d755b(0x2c5)]['prototype'][_0x1d755b(0x205)],{'apply':function(_0x4843ca,_0x25b768,_0x4b8331){const _0x25da22=_0x1d755b;return _0x4b8331[0x0]=_0x338109(_0x4b8331[0x0],_0x25b768),Reflect[_0x25da22(0x244)](_0x4843ca,_0x25b768,_0x4b8331);}}),window[_0x1d755b(0x2c5)][_0x1d755b(0x2ea)][_0x1d755b(0x26c)]=window['CanvasRenderingContext2D'][_0x1d755b(0x2ea)][_0x1d755b(0x246)],window[_0x1d755b(0x2c5)][_0x1d755b(0x2ea)][_0x1d755b(0x246)]=new Proxy(window[_0x1d755b(0x2c5)][_0x1d755b(0x2ea)][_0x1d755b(0x246)],{'apply':function(_0x13425f,_0x53e5b0,_0x3094e0){const _0x312416=_0x1d755b;return _0x3094e0[0x0]=_0x338109(_0x3094e0[0x0],_0x53e5b0),Reflect[_0x312416(0x244)](_0x13425f,_0x53e5b0,_0x3094e0);}}),window['CanvasRenderingContext2D'][_0x1d755b(0x2ea)][_0x1d755b(0x2da)]=window[_0x1d755b(0x2c5)][_0x1d755b(0x2ea)][_0x1d755b(0x2f1)],window[_0x1d755b(0x2c5)][_0x1d755b(0x2ea)][_0x1d755b(0x2f1)]=new Proxy(window[_0x1d755b(0x2c5)]['prototype'][_0x1d755b(0x2f1)],{'apply':function(_0xc837,_0x541cad,_0x47ceb0){const _0x50513f=_0x1d755b;if(_0xc91862[0x1]){if(_0xcd5294[_0x541cad[_0x50513f(0x2a5)]]&&_0x541cad[_0x50513f(0x2fb)]>=0x1&&_0x219dc6[0x0][0x3]&&_0x1693ea[_0x50513f(0x287)]){let _0x27c181=_0x219dc6[0x0];if(_0x47ceb0[0x0]['startsWith'](_0x50513f(0x204))&&parseInt(_0x47ceb0[0x0][_0x50513f(0x319)](0x4))>=0x0)_0x27c181=_0x3cb840((_0x27c181[0x0]+_0x27c181[0x1])*0.5,_0x27c181[0x2],_0x27c181[0x3]),_0x2ddfed([_0x27c181[0x0],_0x27c181[0x1],_0xcd5294[_0x541cad[_0x50513f(0x2a5)]][_0x50513f(0x2c7)]],_0x50513f(0x216)),_0x219dc6=[[],[],[]];else _0x3d22e7[_0x47ceb0[0x0]]&&(_0x27c181=_0x3cb840((_0x27c181[0x0]+_0x27c181[0x1])*0.5,_0x27c181[0x2],_0x27c181[0x3]),_0x2ddfed([_0x27c181[0x0],_0x27c181[0x1],_0xcd5294[_0x541cad['fillStyle']][_0x50513f(0x2c7)]],_0x541cad[_0x50513f(0x2a5)]),_0x3e4c49[_0x50513f(0x236)]([_0x27c181[0x0],_0x27c181[0x1]]),_0x219dc6=[[],[],[]]);}}let _0x1b03d5=_0x408c47[_0x47ceb0[0x0]];if(_0x1b03d5&&(!_0x1b03d5['color']||_0x1b03d5[_0x50513f(0x313)]===_0x541cad[_0x50513f(0x2a5)])&&(!_0x1b03d5[_0x50513f(0x297)]||_0x1b03d5[_0x50513f(0x297)]===_0x541cad[_0x50513f(0x297)])){let _0x2fe7aa=_0x3cb840(_0x47ceb0[0x1],_0x47ceb0[0x2],_0x541cad[_0x50513f(0x2d0)]()),_0x205500=_0xa0469c[_0x47ceb0[0x0]],_0x3586cc=_0x3a12c0[_0x47ceb0[0x0]]={'x':_0x2fe7aa[0x0],'y':_0x2fe7aa[0x1],'d':0x1,'s':performance[_0x50513f(0x30b)](),'fillStyle':_0x541cad[_0x50513f(0x2a5)],'font':_0x541cad[_0x50513f(0x297)]};_0x205500&&(_0x3586cc['d']=Math['abs'](_0x3586cc['x']-_0x205500['x'])+Math['abs'](_0x3586cc['y']-_0x205500['y']),_0x3586cc['s']=_0x205500['s']);}return _0x47ceb0[0x0]===_0x50513f(0x2f0)&&_0x1693ea[_0x50513f(0x2f7)][_0x50513f(0x23b)]&&_0xe7dca(_0x3cb840(_0x47ceb0[0x1],_0x47ceb0[0x2],_0x541cad['getTransform']())),_0xc91862=[_0x47ceb0,_0x541cad[_0x50513f(0x2a5)]],_0x541cad[_0x50513f(0x2a5)]===_0x50513f(0x22f)&&(_0x874de9=[_0x47ceb0,_0x541cad[_0x50513f(0x2a5)]]),_0x47ceb0[0x0]=_0x338109(_0x47ceb0[0x0],_0x541cad),Reflect['apply'](_0xc837,_0x541cad,_0x47ceb0);}});let _0x9cba27=![];const _0xe7dca=function(_0x2b84c0){const _0x52ed10=_0x1d755b;if(_0x9cba27)return;_0x9cba27=!![],setTimeout(function(){_0x9cba27=![],_0x16a912(_0x2b84c0['x'],_0x2b84c0['y']);},0x1f4+0x7d0*Math[_0x52ed10(0x2b5)]());};let _0x408c47={'Ready':{'color':_0x1d755b(0x22f),'font':_0x1d755b(0x2a0)},'Garden':{'color':_0x1d755b(0x22f),'font':_0x1d755b(0x243)},'Desert':{'color':_0x1d755b(0x22f),'font':'16px\x20Ubuntu'},'Ocean':{'color':_0x1d755b(0x22f),'font':_0x1d755b(0x243)},'Jungle':{'color':'#ffffff','font':'16px\x20Ubuntu'},'Hel':{'color':_0x1d755b(0x22f),'font':'16px\x20Ubuntu'},'Play\x20as\x20guest':{},'Continue':{'color':_0x1d755b(0x22f)}},_0x219dc6=[[],[],[]],_0xfc941b='',_0x33bb7b=[],_0x31b09d=![],_0x3659e9=function(_0x5a41dd){const _0x309a08=_0x1d755b;_0x31b09d?_0x31b09d['push'](_0x5a41dd):_0x33bb7b[_0x309a08(0x236)](_0x31b09d=[_0x5a41dd]);};window['CanvasRenderingContext2D'][_0x1d755b(0x2ea)]['_beginPath']=window['CanvasRenderingContext2D'][_0x1d755b(0x2ea)][_0x1d755b(0x2cf)],window['CanvasRenderingContext2D'][_0x1d755b(0x2ea)]['beginPath']=new Proxy(window[_0x1d755b(0x2c5)][_0x1d755b(0x2ea)]['beginPath'],{'apply':function(_0x41d330,_0x498b00,_0x191231){const _0x355602=_0x1d755b;return _0x33bb7b=[],_0x31b09d=![],Reflect[_0x355602(0x244)](_0x41d330,_0x498b00,_0x191231);}}),window[_0x1d755b(0x2c5)]['prototype'][_0x1d755b(0x206)]=window['CanvasRenderingContext2D']['prototype']['moveTo'],window[_0x1d755b(0x2c5)]['prototype'][_0x1d755b(0x1f5)]=new Proxy(window['CanvasRenderingContext2D'][_0x1d755b(0x2ea)][_0x1d755b(0x1f5)],{'apply':function(_0x57867a,_0x1ae51,_0x1f54c8){const _0x2b94a0=_0x1d755b;return _0x3659e9({'type':_0x2b94a0(0x1f5),'x':_0x1f54c8[0x0],'y':_0x1f54c8[0x1]}),Reflect[_0x2b94a0(0x244)](_0x57867a,_0x1ae51,_0x1f54c8);}}),window[_0x1d755b(0x2c5)][_0x1d755b(0x2ea)]['_lineTo']=window[_0x1d755b(0x2c5)][_0x1d755b(0x2ea)][_0x1d755b(0x235)],window['CanvasRenderingContext2D'][_0x1d755b(0x2ea)]['lineTo']=new Proxy(window[_0x1d755b(0x2c5)][_0x1d755b(0x2ea)][_0x1d755b(0x235)],{'apply':function(_0x4c10da,_0xc8e24d,_0xc6f9f1){const _0x29dbb0=_0x1d755b;return _0x3659e9({'type':_0x29dbb0(0x235),'x':_0xc6f9f1[0x0],'y':_0xc6f9f1[0x1]}),Reflect[_0x29dbb0(0x244)](_0x4c10da,_0xc8e24d,_0xc6f9f1);}}),window[_0x1d755b(0x2c5)]['prototype']['_closePath']=window[_0x1d755b(0x2c5)][_0x1d755b(0x2ea)]['closePath'],window[_0x1d755b(0x2c5)][_0x1d755b(0x2ea)]['closePath']=new Proxy(window[_0x1d755b(0x2c5)][_0x1d755b(0x2ea)][_0x1d755b(0x304)],{'apply':function(_0x1b6e3f,_0x1e73ce,_0x49aff8){const _0x3643e0=_0x1d755b;return _0x33bb7b=[],_0x31b09d=![],Reflect[_0x3643e0(0x244)](_0x1b6e3f,_0x1e73ce,_0x49aff8);}}),window[_0x1d755b(0x2c5)]['prototype'][_0x1d755b(0x314)]=window[_0x1d755b(0x2c5)][_0x1d755b(0x2ea)][_0x1d755b(0x220)],window[_0x1d755b(0x2c5)][_0x1d755b(0x2ea)][_0x1d755b(0x220)]=new Proxy(window[_0x1d755b(0x2c5)][_0x1d755b(0x2ea)][_0x1d755b(0x220)],{'apply':function(_0x2769af,_0x58d241,_0xb31d25){const _0x5b523b=_0x1d755b;return _0x33bb7b[_0x5b523b(0x202)]===0x1&&_0x33bb7b[0x0]['length']===0x2&&_0x33bb7b[0x0][0x0]['y']===_0x33bb7b[0x0][0x1]['y']&&(_0x219dc6[0x0]=_0x219dc6[0x1],_0x219dc6[0x1]=_0x219dc6[0x2],_0x219dc6[0x2]=[_0x33bb7b[0x0][0x0]['x'],_0x33bb7b[0x0][0x1]['x'],_0x33bb7b[0x0][0x0]['y'],_0x58d241[_0x5b523b(0x2d0)]()]),Reflect[_0x5b523b(0x244)](_0x2769af,_0x58d241,_0xb31d25);}}),window['CanvasRenderingContext2D'][_0x1d755b(0x2ea)][_0x1d755b(0x25c)]=window['CanvasRenderingContext2D']['prototype'][_0x1d755b(0x1e5)],window['CanvasRenderingContext2D'][_0x1d755b(0x2ea)][_0x1d755b(0x1e5)]=new Proxy(window['CanvasRenderingContext2D'][_0x1d755b(0x2ea)][_0x1d755b(0x1e5)],{'apply':function(_0x51cd3c,_0x154479,_0x519a22){const _0x23bfcb=_0x1d755b;return _0xfc941b=_0x154479[_0x23bfcb(0x2a5)],Reflect['apply'](_0x51cd3c,_0x154479,_0x519a22);}}),window['requestAnimationFrame']=new Proxy(window[_0x1d755b(0x309)],{'apply':function(_0x48f767,_0x2380a5,_0x585f03){return _0x362f23(_0x48f767,_0x2380a5,_0x585f03);}});const _0x44b05f=setInterval(function(){const _0x1cdad3=_0x1d755b;document[_0x1cdad3(0x2f9)]&&(clearInterval(_0x44b05f),_0x24c8a1());});0x0&&(window[_0x1d755b(0x2ce)][_0x1d755b(0x272)]=new Proxy(window['WebAssembly'][_0x1d755b(0x272)],{'apply':function(_0x8046fc,_0x1b89f2,_0x40978f){const _0x13f3f1=_0x1d755b;let _0x348173=new Response();return _0x40978f[0x0]=_0x348173,Reflect[_0x13f3f1(0x244)](_0x8046fc,_0x1b89f2,_0x40978f);}}));const _0x3bb21c={},_0x492c72=function(_0x3d2815,_0x121658){_0x3bb21c[_0x3d2815]&&_0x3bb21c[_0x3d2815](_0x121658);},_0x284332=function(_0x557f38,_0x7e56b7,_0x4efeae){const _0xda734b=_0x1d755b;_0x4efeae[0x0]===_0xda734b(0x23d)&&(_0x3bb21c['mousemove']=_0x4efeae[0x1]);if(_0x4efeae[0x0]===_0xda734b(0x306)||_0x4efeae[0x0]===_0xda734b(0x240)||_0x4efeae[0x0]===_0xda734b(0x2bc))return;return _0x7e56b7&&_0x7e56b7['id']==='canvas'&&(_0x4efeae[0x0]===_0xda734b(0x33a)&&(_0x3bb21c[_0xda734b(0x33a)]=_0x4efeae[0x1])),_0x4efeae[0x0]===_0xda734b(0x239)&&(_0x3bb21c['mouseup']=_0x4efeae[0x1]),_0x4efeae[0x0]==='keydown'&&(_0x3bb21c[_0xda734b(0x2e8)]=_0x4efeae[0x1]),_0x4efeae[0x0]===_0xda734b(0x278)&&(_0x3bb21c[_0xda734b(0x278)]=_0x4efeae[0x1]),Reflect[_0xda734b(0x244)](_0x557f38,_0x7e56b7,_0x4efeae);},_0x16a912=function(_0x234115,_0x346f29){const _0x1999e0=_0x1d755b;let _0x144dcc=0x1/window[_0x1999e0(0x312)];_0x234115*=_0x144dcc,_0x346f29*=_0x144dcc,_0x3bb21c[_0x1999e0(0x23d)]({'clientX':_0x234115,'screenX':_0x234115,'clientY':_0x346f29,'screenY':_0x346f29}),_0x3bb21c[_0x1999e0(0x33a)]({'preventDefault':function(){},'clientX':_0x234115,'clientY':_0x346f29}),_0x3bb21c[_0x1999e0(0x239)]({'preventDefault':function(){},'clientX':_0x234115,'clientY':_0x346f29});},_0x47cec9=function(_0x1706a7){const _0x20335a=_0x1d755b;if(_0x3a12c0[_0x1706a7]){if(_0x3a12c0[_0x1706a7]['d']>0.01)return;let _0x35c823=performance[_0x20335a(0x30b)]();if(_0x35c823-_0x3a12c0[_0x1706a7]['s']<0x7d0)return;return _0x16a912(_0x3a12c0[_0x1706a7]['x'],_0x3a12c0[_0x1706a7]['y']),!![];}};HTMLElement[_0x1d755b(0x2ea)][_0x1d755b(0x1f7)]=HTMLElement[_0x1d755b(0x2ea)][_0x1d755b(0x2a2)],HTMLElement['prototype'][_0x1d755b(0x2a2)]=new Proxy(HTMLElement[_0x1d755b(0x2ea)][_0x1d755b(0x2a2)],{'apply':_0x284332}),window['addEventListener']=new Proxy(window[_0x1d755b(0x2a2)],{'apply':_0x284332}),document[_0x1d755b(0x2a2)]=new Proxy(document[_0x1d755b(0x2a2)],{'apply':_0x284332}),localStorage[_0x1d755b(0x24e)]=_0x1d755b(0x2bf);}()));var obj={'rarity':0x0,'id':0x1,'aim':0x5,'basicId':0x93d17,'find':{'petal':_0x4be2d2(0x207),'value':[0x5,0x0,0x0,0x0,0x0,0x0,0x0,0x0]},'config':{'top':![],'left':![],'x':'-20px','y':'-20px','scale':0x1,'key':_0x4be2d2(0x31e)},'version':_0x4be2d2(0x303),'versionHash':versionHash,'autoFind':!![],'multipleCounting':{'enable':![],'petal':{'Common\x20Basic':0x5,'Common\x20Light':0x5},'key':_0x4be2d2(0x26f)}},petal='Common\x20Basic',rarityArr=[_0x4be2d2(0x222),_0x4be2d2(0x266),_0x4be2d2(0x227),'Epic',_0x4be2d2(0x2be),'Mythic',_0x4be2d2(0x208),_0x4be2d2(0x2f3)],rarityColors=[_0x4be2d2(0x2cc),_0x4be2d2(0x2f6),_0x4be2d2(0x2dc),_0x4be2d2(0x32e),_0x4be2d2(0x293),_0x4be2d2(0x2c9),_0x4be2d2(0x2b4),'#2BFFA3'],petalArr=[_0x4be2d2(0x207),_0x4be2d2(0x238),_0x4be2d2(0x260),_0x4be2d2(0x2f8),'Rose','Stinger',_0x4be2d2(0x250),_0x4be2d2(0x30e),_0x4be2d2(0x342),_0x4be2d2(0x1eb),'Cactus',_0x4be2d2(0x22e),'Bubble',_0x4be2d2(0x295),'Dandelion',_0x4be2d2(0x2b6),_0x4be2d2(0x2e9),_0x4be2d2(0x273),_0x4be2d2(0x31f),_0x4be2d2(0x2d2),_0x4be2d2(0x267),_0x4be2d2(0x2de),'Salt',_0x4be2d2(0x329),'Corn',_0x4be2d2(0x2d1),_0x4be2d2(0x31d),_0x4be2d2(0x1fe),_0x4be2d2(0x25b),_0x4be2d2(0x1fa),_0x4be2d2(0x331),_0x4be2d2(0x22b),_0x4be2d2(0x213),'Jelly',_0x4be2d2(0x2bd),_0x4be2d2(0x226),_0x4be2d2(0x2fc),_0x4be2d2(0x257),_0x4be2d2(0x30d),_0x4be2d2(0x32f),_0x4be2d2(0x253),_0x4be2d2(0x20e),_0x4be2d2(0x26e),_0x4be2d2(0x200),_0x4be2d2(0x2db),'Clover',_0x4be2d2(0x25d),_0x4be2d2(0x215),_0x4be2d2(0x24c),_0x4be2d2(0x22a),_0x4be2d2(0x2f2),_0x4be2d2(0x1f2),'Relic',_0x4be2d2(0x301),_0x4be2d2(0x33e),_0x4be2d2(0x256),_0x4be2d2(0x25e),_0x4be2d2(0x33f),_0x4be2d2(0x21d),_0x4be2d2(0x218),'Mark',_0x4be2d2(0x332),_0x4be2d2(0x25f),_0x4be2d2(0x2ab),_0x4be2d2(0x214),_0x4be2d2(0x2cb),_0x4be2d2(0x311),_0x4be2d2(0x1ec),_0x4be2d2(0x20b),'Amulet',_0x4be2d2(0x1ff),'Disc',_0x4be2d2(0x2e1),_0x4be2d2(0x32d),_0x4be2d2(0x254),_0x4be2d2(0x270),_0x4be2d2(0x2dd),'Privet','Glass'];function getNewPetal(_0x7a30e9){const _0x347ac2=_0x4be2d2;var _0x2d6e99={'id':0x1,'rarity':0x0,'petal':''};if(_0x7a30e9[_0x347ac2(0x245)]('\x20')[_0x347ac2(0x202)]<=0x0)return;if(_0x7a30e9[_0x347ac2(0x245)]('\x20')['length']==0x1){if(_0x7a30e9[_0x347ac2(0x265)]('un'))_0x2d6e99['rarity']='Unusual';else{if(_0x7a30e9[_0x347ac2(0x265)]('r'))_0x2d6e99[_0x347ac2(0x28e)]='Rare';else{if(_0x7a30e9[_0x347ac2(0x265)]('e'))_0x2d6e99['rarity']=_0x347ac2(0x24f);else{if(_0x7a30e9['startsWith']('l'))_0x2d6e99[_0x347ac2(0x28e)]=_0x347ac2(0x2be);else{if(_0x7a30e9[_0x347ac2(0x265)]('m'))_0x2d6e99['rarity']='Mythic';else{if(_0x7a30e9[_0x347ac2(0x265)]('u'))_0x2d6e99[_0x347ac2(0x28e)]=_0x347ac2(0x208);else{if(_0x7a30e9[_0x347ac2(0x265)]('s'))_0x2d6e99[_0x347ac2(0x28e)]=_0x347ac2(0x2f3);else _0x2d6e99['rarity']=_0x347ac2(0x222);}}}}}}_0x2d6e99['id']=stringSimilarity[_0x347ac2(0x241)](_0x7a30e9[_0x347ac2(0x319)](0x1),petalArr),_0x7a30e9=_0x2d6e99[_0x347ac2(0x28e)]+'\x20'+_0x2d6e99['id'][_0x347ac2(0x279)]['target'],_0x2d6e99[_0x347ac2(0x28e)]=rarityArr[_0x347ac2(0x251)](_0x2d6e99[_0x347ac2(0x28e)]);}else _0x2d6e99[_0x347ac2(0x28e)]=stringSimilarity[_0x347ac2(0x241)](_0x7a30e9['split']('\x20')[_0x347ac2(0x25a)](),rarityArr),_0x2d6e99['id']=stringSimilarity[_0x347ac2(0x241)](_0x7a30e9[_0x347ac2(0x245)]('\x20')[_0x347ac2(0x23a)](0x1)[_0x347ac2(0x20f)]('\x20'),petalArr),_0x7a30e9=_0x2d6e99[_0x347ac2(0x28e)][_0x347ac2(0x279)][_0x347ac2(0x2c3)]+'\x20'+_0x2d6e99['id']['bestMatch']['target'],_0x2d6e99[_0x347ac2(0x28e)]=_0x2d6e99['rarity'][_0x347ac2(0x326)];return _0x2d6e99['id']=_0x2d6e99['id'][_0x347ac2(0x326)]+0x1,_0x2d6e99['petal']=_0x7a30e9,_0x2d6e99;}var thisNewPetal=getNewPetal(petal);obj['id']=thisNewPetal['id'],obj[_0x4be2d2(0x28e)]=thisNewPetal[_0x4be2d2(0x28e)],petal=thisNewPetal[_0x4be2d2(0x308)];function findSequence(_0x48e317,_0x47d855){const _0x5c4384=_0x4be2d2;let _0x2e4fb4=0x0;for(let _0x2fdaf6=0x0;_0x2fdaf6<_0x47d855[_0x5c4384(0x202)];_0x2fdaf6++){if(_0x47d855[_0x2fdaf6]===_0x48e317[_0x2e4fb4])_0x2e4fb4++;else{if(_0x47d855[_0x2fdaf6]===_0x48e317[0x0])_0x2e4fb4=0x1;else _0x2e4fb4=0x0;}if(_0x2e4fb4===_0x48e317['length'])return _0x2fdaf6-_0x2e4fb4+0x1;}}function SmoothScroll(_0x566cfb,_0x1c6efa,_0x3bce5a){const _0x3b7360=_0x4be2d2;if(_0x566cfb===document)_0x566cfb=document[_0x3b7360(0x249)]||document[_0x3b7360(0x29a)]||document[_0x3b7360(0x2f9)][_0x3b7360(0x1ef)]||document[_0x3b7360(0x2f9)];var _0x5e3ca3=![],_0x3837ee=_0x566cfb[_0x3b7360(0x2a4)],_0x52142c=_0x566cfb===document[_0x3b7360(0x2f9)]&&document[_0x3b7360(0x29a)]?document[_0x3b7360(0x29a)]:_0x566cfb;_0x566cfb[_0x3b7360(0x2a2)](_0x3b7360(0x2b7),_0x3f9e35,{'passive':![]}),_0x566cfb[_0x3b7360(0x2a2)]('DOMMouseScroll',_0x3f9e35,{'passive':![]});function _0x3f9e35(_0x5ea41f){const _0x544bf1=_0x3b7360;_0x5ea41f['preventDefault']();var _0x41ff74=_0xcff3f0(_0x5ea41f);_0x3837ee+=-_0x41ff74*_0x1c6efa,_0x3837ee=Math[_0x544bf1(0x328)](0x0,Math[_0x544bf1(0x2d5)](_0x3837ee,_0x566cfb[_0x544bf1(0x277)]-_0x52142c['clientHeight']));if(!_0x5e3ca3)_0xe6a968();}function _0xcff3f0(_0x287a0f){const _0x2d8689=_0x3b7360;if(_0x287a0f[_0x2d8689(0x1e7)]){if(_0x287a0f[_0x2d8689(0x29b)])return _0x287a0f[_0x2d8689(0x29b)]/_0x287a0f[_0x2d8689(0x1e7)]/0x28*(_0x287a0f['detail']>0x0?0x1:-0x1);else return-_0x287a0f[_0x2d8689(0x1e7)]/0x3;}else return _0x287a0f['wheelDelta']/0x78;}function _0xe6a968(){const _0x2340f5=_0x3b7360;_0x5e3ca3=!![];var _0x391094=(_0x3837ee-_0x566cfb['scrollTop'])/_0x3bce5a;_0x566cfb[_0x2340f5(0x2a4)]+=_0x391094;if(Math['abs'](_0x391094)>0.5)_0xde6037(_0xe6a968);else _0x5e3ca3=![];}var _0xde6037=(function(){const _0x301616=_0x3b7360;return window[_0x301616(0x309)]||window[_0x301616(0x1f4)]||window[_0x301616(0x335)]||window[_0x301616(0x258)]||window['msRequestAnimationFrame']||function(_0x434ec6){window['setTimeout'](_0x434ec6,0x3e8/0x32);};}());}if(localStorage[_0x4be2d2(0x336)](_0x4be2d2(0x2a3))==null)localStorage[_0x4be2d2(0x2af)](_0x4be2d2(0x2a3),JSON[_0x4be2d2(0x2a1)](obj)),setTimeout(()=>{const _0xf7c9b4=_0x4be2d2;toggleCon(),conCon[_0xf7c9b4(0x27e)](0x0,0x6e);},0x1388);else{var thisObj=JSON[_0x4be2d2(0x2c0)](localStorage[_0x4be2d2(0x336)](_0x4be2d2(0x2a3)));thisObj['version']!=obj[_0x4be2d2(0x2c8)]&&(thisObj[_0x4be2d2(0x2c8)]=obj['version'],setTimeout(()=>{const _0xcef48f=_0x4be2d2;toggleCon(),conCon[_0xcef48f(0x27e)](0x0,0x6e);},0x1388));thisObj[_0x4be2d2(0x1f0)]!=versionHash&&(thisObj[_0x4be2d2(0x1f0)]=versionHash,thisObj['autoFind']&&setInterval(()=>{const _0x2466c6=_0x4be2d2;thisObj[_0x2466c6(0x29d)]=findSequence(thisObj['find']['value'],unsafeWindow[_0x2466c6(0x2fe)][_0x2466c6(0x27c)])-(stringSimilarity['findBestMatch'](thisObj[_0x2466c6(0x2ae)][_0x2466c6(0x308)],petalArr)[_0x2466c6(0x326)]+0x1)*0x8+0x8,document['getElementById'](_0x2466c6(0x2e2))[_0x2466c6(0x232)]=_0x2466c6(0x324)+coloringValue(thisObj[_0x2466c6(0x29d)]);var _0x3273c3=JSON[_0x2466c6(0x2c0)](localStorage['getItem'](_0x2466c6(0x2a3)));_0x3273c3['basicId']=thisObj['basicId'],localStorage[_0x2466c6(0x2af)](_0x2466c6(0x2a3),JSON[_0x2466c6(0x2a1)](_0x3273c3));},0x2710));if(Object['keys'](thisObj[_0x4be2d2(0x21f)]['petal'])[_0x4be2d2(0x202)]<0x2)thisObj[_0x4be2d2(0x21f)][_0x4be2d2(0x308)]=obj[_0x4be2d2(0x21f)][_0x4be2d2(0x308)];Object[_0x4be2d2(0x1e4)](obj)[_0x4be2d2(0x2a6)](_0x421fc2=>{if(!Object['keys'](thisObj)['includes'](_0x421fc2))thisObj[_0x421fc2]=obj[_0x421fc2];}),obj=thisObj,localStorage[_0x4be2d2(0x2af)](_0x4be2d2(0x2a3),JSON['stringify'](thisObj));}var thisPetalObj={};for(const [index,[key,value]]of Object[_0x4be2d2(0x1ee)](Object[_0x4be2d2(0x1ee)](obj[_0x4be2d2(0x21f)][_0x4be2d2(0x308)]))){thisPetalObj[index]={'id':getNewPetal(key)['id'],'rarity':getNewPetal(key)['rarity'],'aim':value};}var container=document[_0x4be2d2(0x1e9)](_0x4be2d2(0x20d));function _0x2733(_0x37e766,_0x1637d3){const _0x36ad09=_0x36ad();return _0x2733=function(_0x27339b,_0x3284bc){_0x27339b=_0x27339b-0x1e3;let _0x44711a=_0x36ad09[_0x27339b];return _0x44711a;},_0x2733(_0x37e766,_0x1637d3);}container['id']=_0x4be2d2(0x305),container['style']=_0x4be2d2(0x22c)+obj[_0x4be2d2(0x269)]['x']+',\x20'+obj[_0x4be2d2(0x269)]['y']+_0x4be2d2(0x2e7)+obj[_0x4be2d2(0x269)]['scale']+_0x4be2d2(0x225),container[_0x4be2d2(0x2e4)]=function(){toggleCon();};function toggleCon(){const _0x274d91=_0x4be2d2;conCon[_0x274d91(0x344)]['overflow']==_0x274d91(0x316)?(container[_0x274d91(0x344)][_0x274d91(0x30f)]='300px',container[_0x274d91(0x344)]['width']='400px',conCon[_0x274d91(0x344)][_0x274d91(0x325)]=_0x274d91(0x32a),container[_0x274d91(0x344)][_0x274d91(0x268)]='5px',barProgress[_0x274d91(0x344)]['maxHeight']='300px',barProgress[_0x274d91(0x344)][_0x274d91(0x21c)]=_0x274d91(0x292),barProgress['style'][_0x274d91(0x30f)]=_0x274d91(0x262),barProgress['style']['width']='400px',barProgress[_0x274d91(0x344)][_0x274d91(0x268)]=_0x274d91(0x210),barProgress[_0x274d91(0x344)]['opacity']=0x0,barProgress[_0x274d91(0x344)][_0x274d91(0x334)]=_0x274d91(0x2c9),barProgress[_0x274d91(0x344)][_0x274d91(0x341)]=_0x274d91(0x2eb),barText[_0x274d91(0x344)]['opacity']=0x0,settings[_0x274d91(0x344)][_0x274d91(0x341)]=_0x274d91(0x2a7),settings[_0x274d91(0x344)][_0x274d91(0x281)]=0x1,changelog['style'][_0x274d91(0x341)]=_0x274d91(0x2a7),changelog[_0x274d91(0x344)][_0x274d91(0x281)]=0x1):(container[_0x274d91(0x344)][_0x274d91(0x30f)]=_0x274d91(0x32b),container[_0x274d91(0x344)][_0x274d91(0x1fd)]=_0x274d91(0x2ac),conCon[_0x274d91(0x344)]['overflow']=_0x274d91(0x316),container[_0x274d91(0x344)]['borderRadius']=_0x274d91(0x32b),barProgress[_0x274d91(0x344)]['maxHeight']=_0x274d91(0x32b),barProgress[_0x274d91(0x344)]['maxWidth']=_0x274d91(0x2ac),barProgress[_0x274d91(0x344)]['height']='24px',barProgress['style']['width']=_0x274d91(0x2ac),barProgress[_0x274d91(0x344)][_0x274d91(0x268)]='24px',barProgress[_0x274d91(0x344)][_0x274d91(0x281)]=0x1,barProgress[_0x274d91(0x344)][_0x274d91(0x334)]=_0x274d91(0x252),barProgress[_0x274d91(0x344)][_0x274d91(0x341)]=_0x274d91(0x2a7),barText[_0x274d91(0x344)]['opacity']=0x1,settings[_0x274d91(0x344)][_0x274d91(0x341)]='none',settings[_0x274d91(0x344)]['opacity']=0x0,changelog[_0x274d91(0x344)][_0x274d91(0x341)]=_0x274d91(0x2eb),changelog[_0x274d91(0x344)][_0x274d91(0x281)]=0x0,updateProgress(),updateMultiProgress());}document['querySelector'](_0x4be2d2(0x2f9))['appendChild'](container);var conCon=document[_0x4be2d2(0x1e9)](_0x4be2d2(0x20d));conCon[_0x4be2d2(0x344)]='\x0a\x20\x20\x20\x20overflow:\x20hidden;\x0a\x20\x20\x20\x20height:\x20300px;\x0a',container['appendChild'](conCon),new SmoothScroll(conCon,0x5a,0x7),containerPos(),petal=rarityArr[obj[_0x4be2d2(0x28e)]]+'\x20'+petalArr[obj['id']-0x1],thisNewPetal=getNewPetal(petal),obj['id']=thisNewPetal['id'],obj[_0x4be2d2(0x28e)]=thisNewPetal[_0x4be2d2(0x28e)],petal=thisNewPetal['petal'];function convertNumber(_0x8500ab){const _0x1a49c7=_0x4be2d2;return Math['abs'](Number(_0x8500ab))>=0x3b9aca00?(Math['abs'](Number(_0x8500ab))/0x3b9aca00)[_0x1a49c7(0x24b)](0x2)+'B':Math[_0x1a49c7(0x263)](Number(_0x8500ab))>=0xf4240?(Math['abs'](Number(_0x8500ab))/0xf4240)[_0x1a49c7(0x24b)](0x2)+'M':Math[_0x1a49c7(0x263)](Number(_0x8500ab))>=0x3e8?(Math[_0x1a49c7(0x263)](Number(_0x8500ab))/0x3e8)[_0x1a49c7(0x24b)](0x2)+'K':Math[_0x1a49c7(0x263)](Number(_0x8500ab));}function containerPos(){const _0x2e4464=_0x4be2d2;obj[_0x2e4464(0x269)]['top']?(container['style']['top']='0',container['style']['bottom']=_0x2e4464(0x2ec)):(container[_0x2e4464(0x344)][_0x2e4464(0x275)]=_0x2e4464(0x2ec),container[_0x2e4464(0x344)]['bottom']='0'),obj[_0x2e4464(0x269)][_0x2e4464(0x1f1)]?(container[_0x2e4464(0x344)][_0x2e4464(0x1f1)]='0',container['style']['right']='unset'):(container[_0x2e4464(0x344)]['left']=_0x2e4464(0x2ec),container[_0x2e4464(0x344)][_0x2e4464(0x2b9)]='0'),container[_0x2e4464(0x344)][_0x2e4464(0x1ea)]=_0x2e4464(0x27d)+obj[_0x2e4464(0x269)]['x']+',\x20'+obj[_0x2e4464(0x269)]['y']+_0x2e4464(0x2e7)+obj[_0x2e4464(0x269)][_0x2e4464(0x22d)]+')';}function coloringBool(_0x411d39){const _0x179847=_0x4be2d2;if(_0x411d39)return _0x179847(0x230)+_0x411d39+'</a>';else return _0x179847(0x300)+_0x411d39+_0x179847(0x259);}function coloringValue(_0x5d57c4){return'<a\x20style=\x22color:\x20#DBD74B\x22>'+_0x5d57c4+'</a>';}function coloringFunction(_0x410a02){const _0x2ea83d=_0x4be2d2;return _0x2ea83d(0x2e0)+_0x410a02+_0x2ea83d(0x259);}obj[_0x4be2d2(0x2ba)]=Math[_0x4be2d2(0x263)](Math[_0x4be2d2(0x33c)](obj['aim'])),obj[_0x4be2d2(0x2ba)]=obj[_0x4be2d2(0x2ba)]==0x0?0x1:obj[_0x4be2d2(0x2ba)];function updateMultiProgress(){const _0x292776=_0x4be2d2;var _0x5eda6b='',_0x4b7e7c;if(obj[_0x292776(0x21f)]['enable']){for(const [_0x4e9815,[_0x1932f2,_0x212d25]]of Object[_0x292776(0x1ee)](Object[_0x292776(0x1ee)](obj[_0x292776(0x21f)]['petal']))){_0x4b7e7c=unsafeWindow[_0x292776(0x2fe)][_0x292776(0x27c)][obj[_0x292776(0x29d)]+getNewPetal(_0x1932f2)['id']*0x8-(0x8-getNewPetal(_0x1932f2)[_0x292776(0x28e)])],_0x5eda6b+=_0x292776(0x282)+_0x1932f2+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22text-align:\x20right;\x20float:\x20right;\x20position:\x20relative;\x20top:\x20-15px;\x22>'+convertNumber(_0x4b7e7c)+'/'+convertNumber(_0x212d25)+_0x292776(0x2b1)+_0x4b7e7c/_0x212d25*0x64+'%;max-width:100%;background:\x20'+rarityColors[getNewPetal(_0x1932f2)[_0x292776(0x28e)]]+_0x292776(0x2bb);}multiProgress[_0x292776(0x232)]=_0x5eda6b;}}var multiProgress=document[_0x4be2d2(0x1e9)]('div');multiProgress[_0x4be2d2(0x344)]=_0x4be2d2(0x29f),document[_0x4be2d2(0x21e)]('body')[_0x4be2d2(0x20c)](multiProgress),new SmoothScroll(multiProgress,0x5a,0x7);function multiProgressToggle(){const _0x21f5ae=_0x4be2d2;multiProgress['style'][_0x21f5ae(0x2b9)]=multiProgress[_0x21f5ae(0x344)][_0x21f5ae(0x2b9)]==_0x21f5ae(0x31a)?'-290px':_0x21f5ae(0x31a);}var settings=document[_0x4be2d2(0x1e9)](_0x4be2d2(0x20d));settings['style']=_0x4be2d2(0x24a),conCon[_0x4be2d2(0x20c)](settings);var settings_transform=document[_0x4be2d2(0x1e9)](_0x4be2d2(0x20d));function _0x36ad(){const _0x5eb975=['stroke','Cleft','Common','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22CMultiple_key\x22>Key:\x20','clientX',');\x0a\x20\x20\x20\x20background:\x20#333333;\x0a\x20\x20\x20\x20border-radius:\x2024px;\x0a\x20\x20\x20\x20transition:\x20all\x201s\x20ease-in-out;\x0a\x20\x20\x20\x20opacity:\x201;\x0a\x20\x20\x20\x20box-shadow:\x205px\x205px\x20rgba(0,\x200,\x200,\x200.3);\x0a\x20\x20\x20\x20pointer-events:\x20all;\x0a\x20\x20\x20\x20cursor:\x20pointer;\x0a\x20\x20\x20\x20overflow:\x20hidden;\x0a','Shell','Rare','Cpetal','innerWidth','Orange','Pearl','\x0a\x20\x20\x20\x20padding:\x205px;\x0a\x20\x20\x20\x20height:\x2024px;\x0a\x20\x20\x20\x20width:\x20350px;\x0a\x20\x20\x20\x20position:\x20absolute;\x0a\x20\x20\x20\x20transform:\x20translate(','scale','Faster','#ffffff','<a\x20style=\x22color:\x20#2BFFA3\x22>','rgb(','innerHTML','Caim','color:\x20rgb(25,\x20156,\x2035);\x20background:\x20rgb(200,\x20255,\x20200)','lineTo','push','Petal?','Light','mouseup','splice','afkButton','replaceAll','mousemove','_closePath','\x20petals:\x20','focus','findBestMatch','CMultiple_petal','16px\x20Ubuntu','apply','split','strokeText','scammer','111HvfgdH','scrollingElement','\x0a\x20\x20\x20\x20padding:\x2010px;\x0a\x20\x20\x20\x20color:\x20white;\x0a\x20\x20\x20\x20font-family:\x20\x27Ubuntu\x27;\x0a\x20\x20\x20\x20z-index:\x201;\x0a\x20\x20\x20\x20font-size:\x2012px;\x0a\x20\x20\x20\x20line-height:\x2015px;\x0a\x20\x20\x20\x20opacity:\x200;\x0a\x20\x20\x20\x20transition:\x20all\x201s\x20ease-in-out;\x0a\x20\x20\x20\x20pointer-events:\x20none;\x0a\x20\x20\x20\x20text-shadow:\x20rgb(0\x200\x200)\x202px\x200px\x200px,\x20rgb(0\x200\x200)\x201.75517px\x200.958851px\x200px,\x20rgb(0\x200\x200)\x201.0806px\x201.68294px\x200px,\x20rgb(0\x200\x200)\x200.141474px\x201.99499px\x200px,\x20rgb(0\x200\x200)\x20-0.832294px\x201.81859px\x200px,\x20rgb(0\x200\x200)\x20-1.60229px\x201.19694px\x200px,\x20rgb(0\x200\x200)\x20-1.97998px\x200.28224px\x200px,\x20rgb(0\x200\x200)\x20-1.87291px\x20-0.701566px\x200px,\x20rgb(0\x200\x200)\x20-1.30729px\x20-1.5136px\x200px,\x20rgb(0\x200\x200)\x20-0.421592px\x20-1.95506px\x200px,\x20rgb(0\x200\x200)\x200.567324px\x20-1.91785px\x200px,\x20rgb(0\x200\x200)\x201.41734px\x20-1.41108px\x200px,\x20rgb(0\x200\x200)\x201.92034px\x20-0.558831px\x200px;\x0a','toFixed','Basil','#de1f1f','florrio_tutorial','Epic','Iris','indexOf','#F5FF65','Soil','Chip','getElementById','Cotton','Dahlia','oRequestAnimationFrame','</a>','shift','Magnet','_fill','Powder','Carrot','Blood\x20Stinger','Rock','View\x20Progresses','300px','abs','Aim?','startsWith','Unusual','Honey','borderRadius','config','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22CposY\x22>y:\x20','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22CautoFind\x22>Auto\x20Update:\x20','_strokeText','enabled','Third\x20Eye','Minus','Card','#1fdbde','instantiateStreaming','Heavy','.\x20Petal\x20name:\x20Aim\x0aClick\x20Cancel\x20to\x20Save\x20&\x20Exit','top','translate','scrollHeight','keyup','bestMatch','CMultiple_view','<br>','HEAPU32','translate(','scrollTo','CposX','cos','opacity','\x0a\x20\x20\x20\x20\x20\x20\x20\x20<br>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22margin-top:\x205px\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22text-align:\x20left;\x20float:\x20left;\x20position:\x20relative;\x20top:\x20-15px;\x22>','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<br>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22CMultiple_Toggle\x22>Multiple\x20counting:\x20','\x20(0.00%)','autoFind','CMultiple_key','tracers','Continue','CautoFind','Petal:\x20','round','4062830hRgswf','canvas','rarity','Auto\x20update\x20ID','Ctop','sFindId','400px','#DE1F1F','14px\x20Ubuntu','Pollen','sqrt','font','innerHeight','stopPropagation','documentElement','wheelDelta','#7eef6d','basicId','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22CMultiple_view\x22>','\x0a\x20\x20\x20\x20top:\x2020px;\x0a\x20\x20\x20\x20right:\x20-290px;\x0a\x20\x20\x20\x20width:\x20250px;\x0a\x20\x20\x20\x20height:\x20auto;\x0a\x20\x20\x20\x20max-height:\x20200px;\x0a\x20\x20\x20\x20background:\x20#333333;\x0a\x20\x20\x20\x20position:\x20absolute;\x0a\x20\x20\x20\x20border-radius:\x205px;\x0a\x20\x20\x20\x20padding:\x2015px;\x0a\x20\x20\x20\x20box-shadow:\x205px\x205px\x20rgba(0,\x200,\x200,\x200.3);\x0a\x20\x20\x20\x20overflow:\x20hidden\x20scroll;\x0a\x20\x20\x20\x20color:\x20white;\x0a\x20\x20\x20\x20font-family:\x20\x27Ubuntu\x27;\x0a\x20\x20\x20\x20transition:\x20all\x201s\x20ease-in-out;\x0a\x20\x20\x20\x20font-size:\x2012px;\x0a\x20\x20\x20\x20text-shadow:\x20rgb(0\x200\x200)\x202px\x200px\x200px,\x20rgb(0\x200\x200)\x201.75517px\x200.958851px\x200px,\x20rgb(0\x200\x200)\x201.0806px\x201.68294px\x200px,\x20rgb(0\x200\x200)\x200.141474px\x201.99499px\x200px,\x20rgb(0\x200\x200)\x20-0.832294px\x201.81859px\x200px,\x20rgb(0\x200\x200)\x20-1.60229px\x201.19694px\x200px,\x20rgb(0\x200\x200)\x20-1.97998px\x200.28224px\x200px,\x20rgb(0\x200\x200)\x20-1.87291px\x20-0.701566px\x200px,\x20rgb(0\x200\x200)\x20-1.30729px\x20-1.5136px\x200px,\x20rgb(0\x200\x200)\x20-0.421592px\x20-1.95506px\x200px,\x20rgb(0\x200\x200)\x200.567324px\x20-1.91785px\x200px,\x20rgb(0\x200\x200)\x201.41734px\x20-1.41108px\x200px,\x20rgb(0\x200\x200)\x201.92034px\x20-0.558831px\x200px;\x0a','27.5px\x20Ubuntu','stringify','addEventListener','petalFarmingCounter','scrollTop','fillStyle','forEach','all','Key:\x20',']\x20must\x20be\x20a\x20number!','miterLimit','Bur','350px','includes','find','setItem','auto','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22width:\x2099%;height:\x207px;background:\x20#222;border-radius:\x205px;padding:\x203px;margin:\x202px\x200\x205px\x200;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22width:\x20','movementCheck','8176210rzdpYd','#FF2B75','random','Beetle\x20Egg','mousewheel','1235765FKmGQo','right','aim',';height:\x20100%;border-radius:\x203px;\x20transition:\x20all\x201s\x20ease-in-out;\x22></div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20','visibilitychange','Claw','Legendary','complete','parse','Invalid\x20input:\x20[','1896486VnNdPW','target','Multiple\x20counting:\x20','CanvasRenderingContext2D','console','index','version','#1FDBDE','How\x20to\x20use?','Ankh','#7EEF6D','open','WebAssembly','beginPath','getTransform','Sand','Web','setTransform','</div>\x0a\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20<div\x20id=\x22sTransform\x22\x20style=\x22font-size:\x2015px;\x20margin-top:\x205px;\x20margin-bottom:\x205px;\x22>Position\x20&\x20Scale</div>\x0a\x20\x20\x20\x20<div\x20id=\x22kTransform\x22\x20style=\x22margin-left:\x2010px;\x20height:\x200px;\x20opacity:\x200;\x20pointer-events:\x20none;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22Ctop\x22>top:\x20','min','9JCWWkl','center','\x0a\x20\x20\x20\x20<div\x20style=\x22font-size:\x2018px;\x20margin-bottom:\x2010px;\x20text-align:\x20center;\x22>Hackering\x20(By\x20kit2d2alt)</div>\x0a\x20\x20\x20\x20<div\x20style=\x22color:\x20#1FDBDE;\x20font-size:\x2015px;\x20margin-top:\x205px;\x20margin-bottom:\x205px\x22>7/15/24\x20-\x20v1.3</div>\x0a\x20\x20\x20\x20<div\x20style=\x22margin-left:\x2010px\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20-\x20Added\x20counting\x20script\x20from\x20Furaken.<br>\x0a\x20\x20\x20\x20\x20\x20\x20\x20-\x20Added\x20','strokeStyle','_fillText','Stick','#4D52E3','Moon','Leaf','autoGrind','<a\x20style=\x22color:\x20#1FDBDE\x22>','Shovel','Capply','\x20/\x20','onclick','_beginPath','#ff2b75',')\x20scale(','keydown','Antennae','prototype','none','unset','maxHeight',':\x200\x20/\x20','Plinko','I\x27m\x20here','fillText','Ant\x20Egg','Super','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22Cleft\x22>left:\x20','values','#FFE65D','bypassAfkCheck','Square','body','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22CposX\x22>x:\x20','globalAlpha','Cutter','CposY','Module','Petals:\x20','<a\x20style=\x22color:\x20#DB5A5A\x22>','Lotus','enable','1.2','closePath','container','blur','autoRespawn','petal','requestAnimationFrame','Petal\x20name?','now','setLineDash','Uranium','Wing','height','toLowerCase','Dice','devicePixelRatio','color','_stroke','CMultiple_Toggle','hidden','sTransform','\x20at\x20least\x20one\x20times).\x0a\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20<div\x20style=\x22color:\x20#1FDBDE;\x20font-size:\x2015px;\x20margin-top:\x205px;\x20margin-bottom:\x205px\x22>5/15/24\x20-\x20v1.1</div>\x0a\x20\x20\x20\x20<div\x20style=\x22margin-left:\x2010px\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20-\x20Updated\x20tracers\x20and\x20removed\x20some\x20detectable\x20features.\x0a\x20\x20\x20\x20</div>\x0a','slice','20px','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22Caim\x22>Aim:\x20','Ready','Pincer','Equal','Yin\x20Yang','sProgress','key','_lineTo','10868248cmfTSv','Basic\x20ID:\x20','overflow','bestMatchIndex','#861fde','max','Rice','hidden\x20scroll','24px','Aim:\x20','Coin','#861FDE','Sponge','Basic\x20ID?','Starfish','Rubber','Cscale','background','mozRequestAnimationFrame','getItem','map','getContext','Cinstruction','mousedown','8ohNqHv','floor','log','Bulb','Bone','#4d52e3','pointerEvents','Missile','\x0a\x20\x20\x20\x20<div\x20style=\x22font-size:\x2018px;\x20margin-bottom:\x2010px;\x20text-align:\x20center;\x22>Settings</div>\x0a\x20\x20\x20\x20<div\x20id=\x22sProgress\x22\x20style=\x22font-size:\x2015px;\x20margin-top:\x205px;\x20margin-bottom:\x205px;\x22>Progress\x20Counter</div>\x0a\x20\x20\x20\x20<div\x20id=\x22kProgress\x22\x20style=\x22margin-left:\x2010px;\x20height:\x200px;\x20opacity:\x200;\x20pointer-events:\x20none;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22Cpetal\x22>Petal:\x20','style','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22CMultiple_petal\x22>Petals:\x20','keys','fill','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22Capply\x22>Basic\x20ID:\x20','detail','code','createElement','transform','Grapes','Talisman','value','entries','parentNode','versionHash','left','Poo','spawnBiome','webkitRequestAnimationFrame','moveTo','trim','_addEventListener','Find\x20&\x20Apply','Mythic','Yggdrasil','99344KsNEaa','CkeyToggle','width','Yucca','Compass','Peas','5547535tTLIjP','length','unshift','Lvl\x20','measureText','_moveTo','Basic','Ultra','lineWidth','Cfind','Battery','appendChild','div','Fangs','join','0px','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22Cscale\x22>scale:\x20','proxy','Lightning','Root','Air','#000000','_log','Tomato','Key:\x20<a\x20class=\x22blink\x22>Press\x20a\x20key!</a>','clientY','Invalid\x20input:\x20[Aim]\x20must\x20be\x20a\x20number!','maxWidth','Plank','querySelector','multipleCounting'];_0x36ad=function(){return _0x5eb975;};return _0x36ad();}settings_transform[_0x4be2d2(0x232)]=_0x4be2d2(0x343)+coloringValue(petal)+_0x4be2d2(0x31b)+coloringValue(obj[_0x4be2d2(0x2ba)])+_0x4be2d2(0x283)+coloringBool(obj[_0x4be2d2(0x21f)][_0x4be2d2(0x302)])+_0x4be2d2(0x1e3)+coloringValue(JSON['stringify'](obj[_0x4be2d2(0x21f)][_0x4be2d2(0x308)],null,'\u2001')[_0x4be2d2(0x23c)]('\x0a','<br>'))+_0x4be2d2(0x223)+coloringValue(obj['multipleCounting'][_0x4be2d2(0x321)])+_0x4be2d2(0x29e)+coloringFunction(_0x4be2d2(0x261))+_0x4be2d2(0x2d4)+coloringBool(obj[_0x4be2d2(0x269)][_0x4be2d2(0x275)])+_0x4be2d2(0x2f4)+coloringBool(obj[_0x4be2d2(0x269)]['left'])+_0x4be2d2(0x2fa)+coloringValue(obj[_0x4be2d2(0x269)]['x'])+_0x4be2d2(0x26a)+coloringValue(obj[_0x4be2d2(0x269)]['y'])+_0x4be2d2(0x211)+coloringValue(obj[_0x4be2d2(0x269)][_0x4be2d2(0x22d)])+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22CkeyToggle\x22>Key:\x20'+coloringValue(obj[_0x4be2d2(0x269)][_0x4be2d2(0x321)])+'</div>\x0a\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20<div\x20id=\x22sFindId\x22\x20style=\x22font-size:\x2015px;\x20margin-top:\x205px;\x20margin-bottom:\x205px;\x22>Find\x20&\x20Apply\x20Basic\x20ID</div>\x0a\x20\x20\x20\x20<div\x20id=\x22kFindId\x22\x20style=\x22margin-left:\x2010px;\x20height:\x200px;\x20opacity:\x200;\x20pointer-events:\x20none;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22Cfind\x22>'+coloringFunction(_0x4be2d2(0x1f8))+_0x4be2d2(0x1e6)+coloringValue(obj['basicId'])+_0x4be2d2(0x26b)+coloringBool(obj[_0x4be2d2(0x285)])+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22Cinstruction\x22>'+coloringFunction(_0x4be2d2(0x2ca))+'</div>\x0a\x20\x20\x20\x20</div>\x0a',settings[_0x4be2d2(0x20c)](settings_transform),[_0x4be2d2(0x320),_0x4be2d2(0x317),_0x4be2d2(0x291)][_0x4be2d2(0x2a6)](_0x4822ed=>{const _0x56e329=_0x4be2d2;document[_0x56e329(0x255)](_0x4822ed)[_0x56e329(0x2e4)]=function(_0x4847ca){const _0x48d9cc=_0x56e329;_0x4847ca[_0x48d9cc(0x299)]();var _0x53cbbc=document[_0x48d9cc(0x255)]('k'+this['id'][_0x48d9cc(0x319)](0x1));_0x53cbbc[_0x48d9cc(0x344)][_0x48d9cc(0x281)]!=0x1?(_0x53cbbc[_0x48d9cc(0x344)]['opacity']=0x1,_0x53cbbc[_0x48d9cc(0x344)][_0x48d9cc(0x30f)]=_0x48d9cc(0x2b0),_0x53cbbc[_0x48d9cc(0x344)][_0x48d9cc(0x341)]=_0x48d9cc(0x2a7)):(_0x53cbbc['style'][_0x48d9cc(0x281)]=0x0,_0x53cbbc[_0x48d9cc(0x344)]['height']=_0x48d9cc(0x210),_0x53cbbc['style'][_0x48d9cc(0x341)]=_0x48d9cc(0x2eb));};}),[_0x4be2d2(0x228),'Caim',_0x4be2d2(0x315),_0x4be2d2(0x242),'CMultiple_key',_0x4be2d2(0x27a),_0x4be2d2(0x290),_0x4be2d2(0x221),_0x4be2d2(0x27f),'CposY',_0x4be2d2(0x333),'CkeyToggle',_0x4be2d2(0x20a),_0x4be2d2(0x2e2),'CautoFind','Cinstruction'][_0x4be2d2(0x2a6)](_0x1de017=>{const _0x4b74d3=_0x4be2d2;document[_0x4b74d3(0x255)](_0x1de017)['onclick']=function(_0x5ad6bb){const _0x293858=_0x4b74d3;_0x5ad6bb[_0x293858(0x299)]();var _0x4a126c='',_0x3b174b=[],_0x938986=0x0,_0x3ebec7=[];if([_0x293858(0x228),'Caim',_0x293858(0x315),_0x293858(0x242),'CMultiple_aim','CMultiple_key',_0x293858(0x27a)][_0x293858(0x2ad)](this['id'])){if([_0x293858(0x228)]['includes'](this['id'])){_0x4a126c=prompt(_0x293858(0x30a),petal);if(petal==null)return;petal=_0x4a126c;var _0x1ea3bc=getNewPetal(petal);obj['id']=_0x1ea3bc['id'],obj['rarity']=_0x1ea3bc['rarity'],petal=_0x1ea3bc[_0x293858(0x308)],this[_0x293858(0x232)]=_0x293858(0x28a)+coloringValue(petal),barText[_0x293858(0x232)]=petal+':\x20'+convertNumber(thisPetal)+_0x293858(0x2e3)+convertNumber(obj[_0x293858(0x2ba)])+'\x20('+(thisPetal*0x64/obj[_0x293858(0x2ba)])[_0x293858(0x24b)](0x2)+'%)';}else{if([_0x293858(0x233)][_0x293858(0x2ad)](this['id'])){_0x4a126c=prompt(_0x293858(0x264),obj['aim']);if(_0x4a126c==null)return;if(isNaN(_0x4a126c))return alert(_0x293858(0x21b));obj[_0x293858(0x2ba)]=Number(_0x4a126c),obj[_0x293858(0x2ba)]=Math[_0x293858(0x263)](Math[_0x293858(0x33c)](obj[_0x293858(0x2ba)])),obj[_0x293858(0x2ba)]=obj['aim']==0x0?0x1:obj[_0x293858(0x2ba)],this['innerHTML']=_0x293858(0x32c)+coloringValue(obj[_0x293858(0x2ba)]);}else{if([_0x293858(0x315)][_0x293858(0x2ad)](this['id']))_0x4a126c=!obj[_0x293858(0x21f)][_0x293858(0x302)],this[_0x293858(0x232)]=_0x293858(0x2c4)+coloringBool(_0x4a126c),obj[_0x293858(0x21f)][_0x293858(0x302)]=_0x4a126c;else{if([_0x293858(0x242)]['includes'](this['id'])){var _0x201f6b=0x0,_0x3ce5eb={},_0x37de89,_0x252a66,_0x1e81e6={};while(!![]){_0x4a126c=prompt(_0x201f6b+0x1+_0x293858(0x274),Object[_0x293858(0x1e4)](obj[_0x293858(0x21f)][_0x293858(0x308)])[_0x201f6b]+':\x20'+Object[_0x293858(0x2f5)](obj[_0x293858(0x21f)][_0x293858(0x308)])[_0x201f6b]);if(_0x4a126c==null){if(Object[_0x293858(0x1e4)](_0x3ce5eb)[_0x293858(0x202)]<0x2)_0x3ce5eb=obj['multipleCounting'][_0x293858(0x308)];obj[_0x293858(0x21f)][_0x293858(0x308)]=_0x3ce5eb;for(const [_0x3dc19a,[_0x2168d9,_0x51f81c]]of Object[_0x293858(0x1ee)](Object[_0x293858(0x1ee)](obj['multipleCounting']['petal']))){_0x1e81e6[_0x3dc19a]={'id':getNewPetal(_0x2168d9)['id'],'rarity':getNewPetal(_0x2168d9)[_0x293858(0x28e)],'aim':_0x51f81c};}this[_0x293858(0x232)]=_0x293858(0x2ff)+coloringValue(JSON['stringify'](obj[_0x293858(0x21f)][_0x293858(0x308)],null,'\u2001')[_0x293858(0x23c)]('\x0a',_0x293858(0x27b))),localStorage[_0x293858(0x2af)](_0x293858(0x2a3),JSON[_0x293858(0x2a1)](obj));return;}_0x4a126c=_0x4a126c[_0x293858(0x245)](':')[_0x293858(0x337)](_0x3f9ac2=>_0x3f9ac2[_0x293858(0x1f6)]());if(isNaN(_0x4a126c[0x1])){alert(_0x293858(0x21b));continue;}_0x3ce5eb[getNewPetal(_0x4a126c[0x0])[_0x293858(0x308)]]=Number(_0x4a126c[0x1]),_0x201f6b++;}}else{if([_0x293858(0x286)][_0x293858(0x2ad)](this['id'])){_0x938986=Date[_0x293858(0x30b)]()+0x5*0x3e8,this[_0x293858(0x232)]=_0x293858(0x219);var _0x5c5228=setInterval(()=>{const _0x48763a=_0x293858;_0x3ebec7['unshift'](lastKey);if(_0x3ebec7['length']>0x2)_0x3ebec7[_0x48763a(0x23a)](0x2);if(_0x3ebec7[_0x3ebec7[_0x48763a(0x202)]-0x1]!=_0x3ebec7[0x0]){obj[_0x48763a(0x21f)]['key']=_0x3ebec7[0x0],this['innerHTML']=_0x48763a(0x2a8)+coloringValue(_0x3ebec7[0x0]),clearInterval(_0x5c5228),localStorage['setItem'](_0x48763a(0x2a3),JSON['stringify'](obj));return;}if(Date[_0x48763a(0x30b)]()>_0x938986){this[_0x48763a(0x232)]=_0x48763a(0x2a8)+coloringValue(obj[_0x48763a(0x21f)][_0x48763a(0x321)]),clearInterval(_0x5c5228);return;}});}else{if([_0x293858(0x27a)]['includes'](this['id']))multiProgressToggle();}}}}}}else{if([_0x293858(0x290),_0x293858(0x221),_0x293858(0x27f),_0x293858(0x2fd),'Cscale',_0x293858(0x1fc)]['includes'](this['id'])){if([_0x293858(0x290),'Cleft'][_0x293858(0x2ad)](this['id']))_0x4a126c=!obj['config'][_0x1de017[_0x293858(0x319)](0x1)],this['innerHTML']=_0x1de017['slice'](0x1)+':\x20'+coloringBool(_0x4a126c),obj[_0x293858(0x269)][_0x1de017[_0x293858(0x319)](0x1)]=_0x4a126c;else{if([_0x293858(0x27f),_0x293858(0x2fd)][_0x293858(0x2ad)](this['id'])){_0x4a126c=prompt(_0x1de017[_0x293858(0x319)](0x1),obj[_0x293858(0x269)][_0x1de017[_0x1de017[_0x293858(0x202)]-0x1][_0x293858(0x310)]()][_0x293858(0x319)](0x0,-0x2));if(_0x4a126c==null)return;if(isNaN(_0x4a126c))return alert(_0x293858(0x2c1)+_0x1de017[_0x293858(0x319)](0x1)+_0x293858(0x2a9));_0x4a126c=Number(_0x4a126c),this[_0x293858(0x232)]=_0x1de017[_0x1de017[_0x293858(0x202)]-0x1][_0x293858(0x310)]()+':\x20'+coloringValue(_0x4a126c+'px'),obj[_0x293858(0x269)][_0x1de017[_0x1de017['length']-0x1]['toLowerCase']()]=_0x4a126c+'px';}else{if(['Cscale'][_0x293858(0x2ad)](this['id'])){_0x4a126c=prompt(_0x1de017['slice'](0x1),obj[_0x293858(0x269)][_0x1de017[_0x293858(0x319)](0x1)]);if(_0x4a126c==null)return;if(isNaN(_0x4a126c))return alert(_0x293858(0x2c1)+_0x1de017[_0x293858(0x319)](0x1)+_0x293858(0x2a9));_0x4a126c=Number(_0x4a126c);if(_0x4a126c==0x0)return;this[_0x293858(0x232)]=_0x1de017[_0x293858(0x319)](0x1)+':\x20'+coloringValue(_0x4a126c),obj[_0x293858(0x269)][_0x1de017[_0x293858(0x319)](0x1)]=_0x4a126c;}else{if([_0x293858(0x1fc)]['includes'](this['id'])){_0x938986=Date[_0x293858(0x30b)]()+0x5*0x3e8,this[_0x293858(0x232)]=_0x293858(0x219);var _0x4b65ce=setInterval(()=>{const _0xacbcb6=_0x293858;_0x3ebec7[_0xacbcb6(0x203)](lastKey);if(_0x3ebec7[_0xacbcb6(0x202)]>0x2)_0x3ebec7['splice'](0x2);if(_0x3ebec7[_0x3ebec7[_0xacbcb6(0x202)]-0x1]!=_0x3ebec7[0x0]){obj[_0xacbcb6(0x269)][_0xacbcb6(0x321)]=_0x3ebec7[0x0],this[_0xacbcb6(0x232)]=_0xacbcb6(0x2a8)+coloringValue(_0x3ebec7[0x0]),clearInterval(_0x4b65ce),localStorage[_0xacbcb6(0x2af)](_0xacbcb6(0x2a3),JSON['stringify'](obj));return;}if(Date[_0xacbcb6(0x30b)]()>_0x938986){this[_0xacbcb6(0x232)]=_0xacbcb6(0x2a8)+coloringValue(obj[_0xacbcb6(0x269)][_0xacbcb6(0x321)]),clearInterval(_0x4b65ce);return;}});}}}}containerPos();}else{if([_0x293858(0x20a),_0x293858(0x2e2),_0x293858(0x289),_0x293858(0x339)][_0x293858(0x2ad)](this['id'])){if([_0x293858(0x20a)][_0x293858(0x2ad)](this['id'])){var _0x22773f='';_0x4a126c=prompt(_0x293858(0x237),obj[_0x293858(0x2ae)]['petal']),_0x4a126c=stringSimilarity[_0x293858(0x241)](_0x4a126c,petalArr),_0x22773f=_0x4a126c['bestMatch']['target'],_0x4a126c=_0x4a126c[_0x293858(0x326)]+0x1,rarityArr['forEach']((_0x5e1bca,_0x24e764)=>{const _0x53bfe9=_0x293858;var _0x5ca851=prompt('Amount\x20of\x20'+_0x5e1bca+'\x20'+_0x22773f,obj[_0x53bfe9(0x2ae)][_0x53bfe9(0x1ed)][_0x24e764]);if(_0x5ca851==null)_0x5ca851=0x0;if(isNaN(_0x5ca851))_0x5ca851=0x0;_0x3b174b[_0x53bfe9(0x236)](Number(_0x5ca851));}),obj[_0x293858(0x2ae)]['petal']=_0x22773f,obj[_0x293858(0x2ae)][_0x293858(0x1ed)]=_0x3b174b,obj['basicId']=findSequence(_0x3b174b,unsafeWindow['Module'][_0x293858(0x27c)])-_0x4a126c*0x8+0x8,document[_0x293858(0x255)](_0x293858(0x2e2))[_0x293858(0x232)]=_0x293858(0x324)+coloringValue(obj[_0x293858(0x29d)]);}else{if([_0x293858(0x2e2)]['includes'](this['id'])){_0x4a126c=prompt(_0x293858(0x330),obj[_0x293858(0x29d)]);if(_0x4a126c==null)return;if(isNaN(_0x4a126c))return;obj['basicId']=Number(_0x4a126c),this['innerHTML']=_0x293858(0x324)+coloringValue(obj[_0x293858(0x29d)]);}else{if([_0x293858(0x289)]['includes'](this['id']))_0x4a126c=!obj[_0x293858(0x285)],this['innerHTML']='Auto\x20Update:\x20'+coloringBool(_0x4a126c),obj[_0x293858(0x285)]=_0x4a126c;else{if([_0x293858(0x339)][_0x293858(0x2ad)](this['id']))window[_0x293858(0x2cd)]('https://youtu.be/W2K6mWIzmHA?si=JWHOLJ67LSntThGW');}}}}}}localStorage[_0x293858(0x2af)](_0x293858(0x2a3),JSON[_0x293858(0x2a1)](obj));};});var changelog=document[_0x4be2d2(0x1e9)](_0x4be2d2(0x20d));changelog[_0x4be2d2(0x344)]='\x0a\x20\x20\x20\x20padding:\x2010px;\x0a\x20\x20\x20\x20color:\x20white;\x0a\x20\x20\x20\x20font-family:\x20\x27Ubuntu\x27;\x0a\x20\x20\x20\x20z-index:\x201;\x0a\x20\x20\x20\x20font-size:\x2012px;\x0a\x20\x20\x20\x20line-height:\x2015px;\x0a\x20\x20\x20\x20opacity:\x200;\x0a\x20\x20\x20\x20transition:\x20all\x201s\x20ease-in-out;\x0a\x20\x20\x20\x20pointer-events:\x20none;\x0a\x20\x20\x20\x20text-shadow:\x20rgb(0\x200\x200)\x202px\x200px\x200px,\x20rgb(0\x200\x200)\x201.75517px\x200.958851px\x200px,\x20rgb(0\x200\x200)\x201.0806px\x201.68294px\x200px,\x20rgb(0\x200\x200)\x200.141474px\x201.99499px\x200px,\x20rgb(0\x200\x200)\x20-0.832294px\x201.81859px\x200px,\x20rgb(0\x200\x200)\x20-1.60229px\x201.19694px\x200px,\x20rgb(0\x200\x200)\x20-1.97998px\x200.28224px\x200px,\x20rgb(0\x200\x200)\x20-1.87291px\x20-0.701566px\x200px,\x20rgb(0\x200\x200)\x20-1.30729px\x20-1.5136px\x200px,\x20rgb(0\x200\x200)\x20-0.421592px\x20-1.95506px\x200px,\x20rgb(0\x200\x200)\x200.567324px\x20-1.91785px\x200px,\x20rgb(0\x200\x200)\x201.41734px\x20-1.41108px\x200px,\x20rgb(0\x200\x200)\x201.92034px\x20-0.558831px\x200px;\x0a',changelog['innerHTML']=_0x4be2d2(0x2d8)+coloringValue(_0x4be2d2(0x28f))+'\x20(this\x20requires\x20you\x20to\x20use\x20'+coloringValue(_0x4be2d2(0x1f8))+_0x4be2d2(0x318),conCon[_0x4be2d2(0x20c)](changelog);var barText=document[_0x4be2d2(0x1e9)](_0x4be2d2(0x20d));barText[_0x4be2d2(0x344)]='\x0a\x20\x20\x20\x20top:\x2050%;\x0a\x20\x20\x20\x20left:\x2050%;\x0a\x20\x20\x20\x20transform:\x20translate(-50%,\x20-50%);\x0a\x20\x20\x20\x20position:\x20absolute;\x0a\x20\x20\x20\x20width:\x20100%;\x0a\x20\x20\x20\x20color:\x20white;\x0a\x20\x20\x20\x20font-family:\x20\x27Ubuntu\x27;\x0a\x20\x20\x20\x20text-align:\x20center;\x0a\x20\x20\x20\x20transition:\x20all\x201s\x20ease-in-out;\x0a\x20\x20\x20\x20text-wrap:\x20nowrap;\x0a\x20\x20\x20\x20z-index:\x201;\x0a\x20\x20\x20\x20pointer-events:\x20none;\x0a\x20\x20\x20\x20font-size:\x2014px;\x0a\x20\x20\x20\x20text-shadow:\x20rgb(0\x200\x200)\x202px\x200px\x200px,\x20rgb(0\x200\x200)\x201.75517px\x200.958851px\x200px,\x20rgb(0\x200\x200)\x201.0806px\x201.68294px\x200px,\x20rgb(0\x200\x200)\x200.141474px\x201.99499px\x200px,\x20rgb(0\x200\x200)\x20-0.832294px\x201.81859px\x200px,\x20rgb(0\x200\x200)\x20-1.60229px\x201.19694px\x200px,\x20rgb(0\x200\x200)\x20-1.97998px\x200.28224px\x200px,\x20rgb(0\x200\x200)\x20-1.87291px\x20-0.701566px\x200px,\x20rgb(0\x200\x200)\x20-1.30729px\x20-1.5136px\x200px,\x20rgb(0\x200\x200)\x20-0.421592px\x20-1.95506px\x200px,\x20rgb(0\x200\x200)\x200.567324px\x20-1.91785px\x200px,\x20rgb(0\x200\x200)\x201.41734px\x20-1.41108px\x200px,\x20rgb(0\x200\x200)\x201.92034px\x20-0.558831px\x200px;\x0a',container['appendChild'](barText);var barProgress=document[_0x4be2d2(0x1e9)]('div');barProgress[_0x4be2d2(0x344)]='\x0a\x20\x20\x20\x20background:\x20#F5FF65;\x0a\x20\x20\x20\x20border-radius:\x2024px;\x0a\x20\x20\x20\x20width:\x200px;\x0a\x20\x20\x20\x20max-width:\x20350px;\x0a\x20\x20\x20\x20max-height:\x2024px;\x0a\x20\x20\x20\x20transition:\x20all\x201s\x20ease-in-out;\x0a\x20\x20\x20\x20opacity:\x200;\x0a\x20\x20\x20\x20height:\x200px;\x0a\x20\x20\x20\x20top:\x2050%;\x0a\x20\x20\x20\x20position:\x20absolute;\x0a\x20\x20\x20\x20transform:\x20translate(0px,\x20-50%);\x0a',container[_0x4be2d2(0x20c)](barProgress),barText[_0x4be2d2(0x232)]=petal+_0x4be2d2(0x2ee)+convertNumber(obj[_0x4be2d2(0x2ba)])+_0x4be2d2(0x284);var thisPetal,thisWidth,thisAim,thisPetalObj_;function updateProgress(){const _0x13b256=_0x4be2d2;if(!obj[_0x13b256(0x21f)][_0x13b256(0x302)])thisPetal=unsafeWindow[_0x13b256(0x2fe)][_0x13b256(0x27c)][obj[_0x13b256(0x29d)]+obj['id']*0x8-(0x8-obj[_0x13b256(0x28e)])],thisAim=obj[_0x13b256(0x2ba)];else{thisPetal=0x0,thisAim=0x0,thisPetalObj_={};for(const [_0xc87f86,[_0x4703eb,_0x3a3d1f]]of Object[_0x13b256(0x1ee)](Object[_0x13b256(0x1ee)](obj['multipleCounting'][_0x13b256(0x308)]))){thisPetalObj_[_0xc87f86]={'id':getNewPetal(_0x4703eb)['id'],'rarity':getNewPetal(_0x4703eb)['rarity'],'aim':_0x3a3d1f};}for(const [_0x3a062c,[_0x59f958,_0x5bf6f8]]of Object[_0x13b256(0x1ee)](Object[_0x13b256(0x1ee)](thisPetalObj_))){thisPetal+=Number(unsafeWindow[_0x13b256(0x2fe)][_0x13b256(0x27c)][obj[_0x13b256(0x29d)]+_0x5bf6f8['id']*0x8-(0x8-_0x5bf6f8[_0x13b256(0x28e)])]),thisAim+=Number(_0x5bf6f8[_0x13b256(0x2ba)]);}}thisWidth=container['style'][_0x13b256(0x1fd)][_0x13b256(0x319)](0x0,-0x2)*thisPetal/thisAim,barProgress[_0x13b256(0x344)][_0x13b256(0x30f)]=thisWidth+'px',barProgress[_0x13b256(0x344)][_0x13b256(0x1fd)]=thisWidth+'px',barProgress[_0x13b256(0x344)][_0x13b256(0x281)]=thisPetal/(thisAim*0.08);if(!obj[_0x13b256(0x21f)][_0x13b256(0x302)])barText[_0x13b256(0x232)]=petal+':\x20'+convertNumber(thisPetal)+_0x13b256(0x2e3)+convertNumber(thisAim)+'\x20('+(thisPetal*0x64/thisAim)[_0x13b256(0x24b)](0x2)+'%)';else barText['innerHTML']=Object['keys'](obj[_0x13b256(0x21f)][_0x13b256(0x308)])['length']+_0x13b256(0x23f)+convertNumber(thisPetal)+'\x20/\x20'+convertNumber(thisAim)+'\x20('+(thisPetal*0x64/thisAim)[_0x13b256(0x24b)](0x2)+'%)';}setInterval(()=>{const _0x52d742=_0x4be2d2;if(conCon[_0x52d742(0x344)]['overflow']!=_0x52d742(0x316))return;updateProgress(),updateMultiProgress();},0x2710);var lastKey;document[_0x4be2d2(0x29a)][_0x4be2d2(0x2a2)](_0x4be2d2(0x2e8),function(_0x3b00c8){const _0x437df7=_0x4be2d2;lastKey=_0x3b00c8[_0x437df7(0x1e8)];event['code']==obj['config']['key']&&(container[_0x437df7(0x344)][_0x437df7(0x281)]=='0'?(container['style'][_0x437df7(0x281)]=0x1,container[_0x437df7(0x344)][_0x437df7(0x341)]=_0x437df7(0x2a7),settings[_0x437df7(0x344)][_0x437df7(0x341)]='all',changelog[_0x437df7(0x344)][_0x437df7(0x341)]='all'):(container[_0x437df7(0x344)]['opacity']=0x0,container[_0x437df7(0x344)][_0x437df7(0x341)]=_0x437df7(0x2eb),settings[_0x437df7(0x344)][_0x437df7(0x341)]=_0x437df7(0x2eb),changelog[_0x437df7(0x344)][_0x437df7(0x341)]='none'));if(event['code']==obj[_0x437df7(0x21f)][_0x437df7(0x321)])multiProgressToggle();}),document[_0x4be2d2(0x21e)](_0x4be2d2(0x28d))[_0x4be2d2(0x2e4)]=function(){const _0x4f4cfd=_0x4be2d2;container[_0x4f4cfd(0x344)][_0x4f4cfd(0x30f)]='20px',container[_0x4f4cfd(0x344)][_0x4f4cfd(0x1fd)]=_0x4f4cfd(0x262),conCon[_0x4f4cfd(0x344)][_0x4f4cfd(0x325)]=_0x4f4cfd(0x316),container[_0x4f4cfd(0x344)][_0x4f4cfd(0x268)]=_0x4f4cfd(0x31a),barProgress[_0x4f4cfd(0x344)][_0x4f4cfd(0x2ed)]='20px',barProgress['style']['maxWidth']=_0x4f4cfd(0x262),barProgress[_0x4f4cfd(0x344)][_0x4f4cfd(0x30f)]=_0x4f4cfd(0x31a),barProgress[_0x4f4cfd(0x344)][_0x4f4cfd(0x1fd)]=_0x4f4cfd(0x262),barProgress[_0x4f4cfd(0x344)][_0x4f4cfd(0x268)]=_0x4f4cfd(0x31a),barProgress['style'][_0x4f4cfd(0x281)]=0x1,barProgress[_0x4f4cfd(0x344)][_0x4f4cfd(0x334)]='#F5FF65',barProgress[_0x4f4cfd(0x344)]['pointerEvents']='all',barText['style'][_0x4f4cfd(0x281)]=0x1,settings[_0x4f4cfd(0x344)]['pointerEvents']='none',settings[_0x4f4cfd(0x344)][_0x4f4cfd(0x281)]=0x0,changelog[_0x4f4cfd(0x344)][_0x4f4cfd(0x341)]=_0x4f4cfd(0x2eb),changelog['style']['opacity']=0x0,updateProgress(),updateMultiProgress();},GM_addStyle('\x0a@keyframes\x20blink\x20{\x0a\x20\x20\x20\x200%\x20{color:\x20#DBD74B}\x0a\x20\x20\x20\x2050%\x20{color:\x20#1FDBDE}\x0a\x20\x20\x20\x20100%\x20{color:\x20#DBD74B}\x0a}\x0a\x0a.blink\x20{\x0a\x20\x20\x20\x20animation-name:\x20blink;\x0a\x20\x20\x20\x20animation-duration:\x201.5s;\x0a\x20\x20\x20\x20animation-iteration-count:\x20infinite;\x0a}\x0a\x0a::-webkit-scrollbar\x20{\x0a\x20\x20\x20\x20width:\x205px;\x0a}\x0a::-webkit-scrollbar-track\x20{\x0a\x20\x20\x20\x20background:\x20#00000000;\x0a}\x0a::-webkit-scrollbar-thumb\x20{\x0a\x20\x20\x20\x20background:\x20#444;\x0a\x20\x20\x20\x20border-radius:\x205px;\x0a}\x0a::-webkit-scrollbar-thumb:hover\x20{\x0a\x20\x20\x20\x20background:\x20#444;\x0a}\x0a');
+ 
+(function() {
+  'use strict';
+  const client = {
+    autoRespawn: {
+      enabled: 1,
+      spawnBiome: 'Garden'
+    },
+    bypassAfkCheck: {
+      movementCheck: 1,
+      afkButton: 1,
+    },
+    autoGrind: {
+     enabled: 1,
+    },
+    tracers: 1,
+  }
+ 
+  let respawnState = 0
+  let lastCheck = 0
+  const _console = {
+    _log: window.console.log,
+    log: function() {
+      this._log(`%c[https://github.com/kit2d2alt]`, `color: rgb(25, 156, 35); background: rgb(200, 255, 200)`, ...arguments)
+    }
+  }
+  const multiply = function(t,l){let e=t.length,n=t[0].length,$=l[0].length,r=Array(e);for(let f=0;f<e;++f){let o=Array($);r[f]=o;let g=t[f];for(let h=0;h<$;++h){let u=0;for(let i=0;i<n;++i)u+=g[i]*l[i][h];o[h]=u}}return r}
+ 
+  let identity = function(a, b, c) {
+    return Reflect.apply(a, b, c)
+  }
+  let beforeAnimationFrame = identity
+  let tracers = {}, addTracer = function(t, color) {
+    if(!color) { color = '#000000' } // if no color
+    if(!tracers[color]) { tracers[color] = [] }
+    tracers[color].push(t)
+  }, mobs = []
+  const parseColor = function(str) {//converter
+    return [parseInt(str[1] + str[2], 16), parseInt(str[3] + str[4], 16), parseInt(str[5] + str[6], 16)]
+  }
+  let mouse = {
+    dx: 0,
+    dy: 0
+  }
+  const main = function() {
+    const canvas = document.getElementById('canvas')
+    canvas._addEventListener('mousemove', function(e) {
+      mouse.dx = (e.clientX - window.innerWidth * 0.5)
+      mouse.dy = (e.clientY - window.innerHeight * 0.5)
+    })
+    const ctx = canvas.getContext('2d')
+    beforeAnimationFrame = function(a, b, c) {
+      let n = performance.now()
+      let w = canvas.width * 0.5, h = canvas.height * 0.5
+      let ir = 1 / window.devicePixelRatio
+      let dw = w * ir, dh = h * ir
+      if(client.autoGrind.enabled) {
+        let closestMob = false, closestDistance = -1
+        for(let i=mobs.length-1;i>=0;i--) {
+          let m = mobs[i]
+          let dx = m[0] - w, dy = m[1] - h
+          let d = dx * dx + dy * dy
+          if(d < closestDistance || closestDistance < 0) {
+            closestDistance = d
+            closestMob = [dx, dy]
+          }
+        }
+        if(closestMob) {
+          let d = 100 * (closestDistance < 1 ? 1 : 1 / Math.sqrt(closestDistance))
+          mouse.dx = closestMob[0] * d
+          mouse.dy = closestMob[1] * d
+        }
+      }
+      if(!buttons.Ready || !client.autoRespawn.enabled) { respawnState = 0 }
+      if(n - lastCheck > 100) {
+        lastCheck = n
+        !function() {
+          if(client.autoRespawn.enabled) {
+            if(respawnState < 1) {
+              if(buttons[client.autoRespawn.spawnBiome]) {
+                if(clickButton(client.autoRespawn.spawnBiome)) {
+                  respawnState ++
+                }
+                return
+              }
+            } else {
+              if(buttons.Ready) {
+                clickButton('Ready')
+                return
+              }
+            } if(buttons.Continue) {
+              clickButton('Continue')
+              respawnState = 0
+            }
+          }
+          if(client.bypassAfkCheck.afkButton) {
+            // broken
+            clickButton(`I'm here`)
+          }
+        }()
+      } else if(!buttons.Continue && (client.bypassAfkCheck.movementCheck || client.autoGrind.enabled)) {
+        let a = (n / 1000) % (2 * Math.PI)
+        let tx = mouse.dx + dw + Math.sin(a), ty = mouse.dy + dh + Math.cos(a)
+        listeners.mousemove({
+          clientX: tx,
+          screenX: tx,
+          clientY: ty,
+          screenY: ty
+        })
+      }
+      let transform = ctx.getTransform()
+      ctx.translate(w, h)
+      ctx.lineCap = 'round'
+      ctx.miterLimit = 1.68
+      ctx.font = '14px Ubuntu'
+      for(let color in tracers) {
+        let o = tracers[color]
+        for(let i=o.length-1;i>=0;i--) {
+          let t = o[i]
+          let l = 1, a = 1
+          if(t[2] > 3) {
+            l += (t[2] - 3) * 0.5
+          } else {
+            a = (t[2] + 1) / 4
+          }
+          let j = a
+          a *= 0.5
+          let r = parseColor(color)
+          ctx.strokeStyle = `rgba(${r[0]}, ${r[1]}, ${r[2]}, ${a})`
+          ctx.setLineDash([10, 15])
+          ctx.lineWidth = l
+          ctx._beginPath()
+          let dx = t[0] - w, dy = t[1] - h
+          ctx._moveTo(dx, dy)
+          let d = dx * dx + dy * dy
+          ctx._lineTo(0, 0)
+          ctx._stroke()
+          a *= 0.25
+          ctx.strokeStyle = `rgba(${r[0]}, ${r[1]}, ${r[2]}, ${a})`
+          ctx.setLineDash([])
+          ctx._stroke()
+          ctx._closePath()
+          if(d > 300 * 300) {
+            let rd = Math.sqrt(d)
+            if(rd < 350) {
+              j *= (rd - 300) * 0.02
+            }
+            if(j > 0.05) {
+              d = 1 / rd
+              let y = 300 + (rd - 300) / (rd - 100) * 100
+              let tx = dx * d * y
+              let ty = dy * d * y + 7
+              if(r[0] === 0 && r[1] === 0 && r[2] === 0) { r[0] = r[1] = r[2] = 255 }
+              ctx.fillStyle = `rgb(${r[0]}, ${r[1]}, ${r[2]})`
+              ctx.strokeStyle = '#000000'
+              ctx.lineWidth = 1.68
+              j *= j
+              if(j < 0.95) { ctx.globalAlpha = j }
+              let text = '' + Math.round(rd / 100)
+              ctx.textAlign = 'center'
+              ctx._strokeText(text, tx, ty)
+              ctx.lineWidth = 10
+              ctx._fillText(text, tx, ty)
+              if(j < 0.95) { ctx.globalAlpha = 1 }
+            }
+          }
+        }
+      }
+      ctx.setTransform(transform)
+      let f = c[0]
+      if(f.proxy) { c[0] = f.proxy } else {
+        c[0] = f.proxy = new Proxy(f, { apply:function(a, b, c) {
+          lbuttons = buttons
+          buttons = {}
+          tracers = {}
+          mobs = []
+          window.l = listeners
+          window.b = buttons
+          return Reflect.apply(a, b, c)
+        } })
+      }
+      return Reflect.apply(a, b, c)
+    }
+  }
+  window.console.log = new Proxy(window.console.log, { apply:function(a, b, c) {
+    return Reflect.apply(a, b, c)
+  } })
+  const untransform = function(x, y, t) {
+    let r = multiply([[x, y, 1]], [[t.a, t.b, 0], [t.c, t.d, 0], [t.e, t.f, 1]])[0]
+    return [r[0] / r[2], r[1] / r[2]]
+  }
+  let lastText = [], lastWhiteText = []
+  let rarities = {
+    Common: {
+      name: 'Common',
+      color: '#7eef6d',
+      index: 0
+    },
+    Unusual: {
+      name: 'Unusual',
+      color: '#ffe65d',
+      index: 1
+    },
+    Rare: {
+      name: 'Rare',
+      color: '#4d52e3',
+      index: 2
+    },
+    Epic: {
+      name: 'Epic',
+      color: '#861fde',
+      index: 3
+    },
+    Legendary: {
+      name: 'Legendary',
+      color: '#de1f1f',
+      index: 4
+    },
+    Mythic: {
+      name: 'Mythic',
+      color: '#1fdbde',
+      index: 5
+    },
+    Ultra: {
+      name: 'Ultra',
+      color: '#ff2b75',
+      index: 6
+    },
+    Super: {
+      name: 'Super',
+      color: '#000000',
+      index: 7
+    }
+  }
+  let colors = {}
+  for(let r in rarities) {
+    colors[rarities[r].color] = rarities[r]
+  }
+  const textTransform = function(text, ctx) {
+    if(text === 'Plinko') {
+      text = 'scammer'
+    }
+    return text
+  }
+  let buttons = {}, lbuttons = {}
+  window.CanvasRenderingContext2D.prototype._measureText = window.CanvasRenderingContext2D.prototype.measureText
+  window.CanvasRenderingContext2D.prototype.measureText = new Proxy(window.CanvasRenderingContext2D.prototype.measureText, { apply:function(a, b, c) {
+    c[0] = textTransform(c[0], b)
+    return Reflect.apply(a, b, c)
+  } })
+  window.CanvasRenderingContext2D.prototype._strokeText = window.CanvasRenderingContext2D.prototype.strokeText
+  window.CanvasRenderingContext2D.prototype.strokeText = new Proxy(window.CanvasRenderingContext2D.prototype.strokeText, { apply:function(a, b, c) {
+    c[0] = textTransform(c[0], b)
+    return Reflect.apply(a, b, c)
+  } })
+  window.CanvasRenderingContext2D.prototype._fillText = window.CanvasRenderingContext2D.prototype.fillText
+  window.CanvasRenderingContext2D.prototype.fillText = new Proxy(window.CanvasRenderingContext2D.prototype.fillText, { apply:function(a, b, c) {
+    if(lastText[1]) {
+      if(colors[b.fillStyle] && b.globalAlpha >= 1 && lastPaths[0][3] && client.tracers) {
+        let t = lastPaths[0]
+        if(c[0].startsWith('Lvl ') && parseInt(c[0].slice(4)) >= 0) {
+          t = untransform((t[0] + t[1]) * 0.5, t[2], t[3])
+          addTracer([t[0], t[1], colors[b.fillStyle].index], '#000000')
+          lastPaths = [[], [], []]
+        } else if(rarities[c[0]]) { // includes summons
+          t = untransform((t[0] + t[1]) * 0.5, t[2], t[3])
+          addTracer([t[0], t[1], colors[b.fillStyle].index], b.fillStyle)
+          mobs.push([t[0], t[1]])
+          lastPaths = [[], [], []]
+        }
+      }
+    }
+    let bd = buttonData[c[0]]
+    if(bd && (!bd.color || bd.color === b.fillStyle) && (!bd.font || bd.font === b.font)) {
+      let t = untransform(c[1], c[2], b.getTransform())
+      let o = lbuttons[c[0]]
+      let n = buttons[c[0]] = {
+        x: t[0],
+        y: t[1],
+        d: 1,
+        s: performance.now(), // **WAIT BEFORE CLICKING A BUTTON** Removing this will
+                              // probably get you banned faster
+        fillStyle: b.fillStyle,
+        font: b.font
+      }
+      if(o) {
+        n.d = Math.abs(n.x - o.x) + Math.abs(n.y - o.y)
+        n.s = o.s
+      }
+    }
+    if(c[0] === `I'm here` && client.bypassAfkCheck.afkButton) {
+      afkButton(untransform(c[1], c[2], b.getTransform()))
+    }
+    lastText = [c, b.fillStyle]
+    if(b.fillStyle === '#ffffff') {
+      lastWhiteText = [c, b.fillStyle]
+    }
+    c[0] = textTransform(c[0], b)
+    return Reflect.apply(a, b, c)
+  } })
+  let clicking = false
+  const afkButton = function(t) {
+    if(clicking) { return }
+    clicking = true
+    setTimeout(function() {
+      clicking = false
+      clickAt(t.x, t.y)
+    }, 500 + 2000 * Math.random())
+  }
+  let buttonData = {
+    Ready: {
+      color: '#ffffff',
+      font: '27.5px Ubuntu'
+    },
+    Garden: {
+      color: '#ffffff',
+      font: '16px Ubuntu'
+    },
+    Desert: {
+      color: '#ffffff',
+      font: '16px Ubuntu'
+    },
+    Ocean: {
+      color: '#ffffff',
+      font: '16px Ubuntu'
+    },
+    Jungle: {
+      color: '#ffffff',
+      font: '16px Ubuntu'
+    },
+    Hel: {
+      color: '#ffffff',
+      font: '16px Ubuntu'
+    },
+    'Play as guest': {},
+    Continue: {
+      color: '#ffffff',
+    }
+  }
+  let lastPaths = [[], [], []], lastFill = ''
+  let path = [], topPath = false, addSegment = function(s) {
+    if(topPath) {
+      topPath.push(s)
+    } else {
+      path.push(topPath = [s])
+    }
+  }
+  window.CanvasRenderingContext2D.prototype._beginPath = window.CanvasRenderingContext2D.prototype.beginPath
+  window.CanvasRenderingContext2D.prototype.beginPath = new Proxy(window.CanvasRenderingContext2D.prototype.beginPath, { apply:function(a, b, c) {
+    path = []
+    topPath = false
+    return Reflect.apply(a, b, c)
+  } })
+  window.CanvasRenderingContext2D.prototype._moveTo = window.CanvasRenderingContext2D.prototype.moveTo
+  window.CanvasRenderingContext2D.prototype.moveTo = new Proxy(window.CanvasRenderingContext2D.prototype.moveTo, { apply:function(a, b, c) {
+    addSegment({
+      type: 'moveTo',
+      x: c[0],
+      y: c[1]
+    })
+    return Reflect.apply(a, b, c)
+  } })
+  window.CanvasRenderingContext2D.prototype._lineTo = window.CanvasRenderingContext2D.prototype.lineTo
+  window.CanvasRenderingContext2D.prototype.lineTo = new Proxy(window.CanvasRenderingContext2D.prototype.lineTo, { apply:function(a, b, c) {
+    addSegment({
+      type: 'lineTo',
+      x: c[0],
+      y: c[1]
+    })
+    return Reflect.apply(a, b, c)
+  } })
+  window.CanvasRenderingContext2D.prototype._closePath = window.CanvasRenderingContext2D.prototype.closePath
+  window.CanvasRenderingContext2D.prototype.closePath = new Proxy(window.CanvasRenderingContext2D.prototype.closePath, { apply:function(a, b, c) {
+    path = []
+    topPath = false
+    return Reflect.apply(a, b, c)
+  } })
+  window.CanvasRenderingContext2D.prototype._stroke = window.CanvasRenderingContext2D.prototype.stroke
+  window.CanvasRenderingContext2D.prototype.stroke = new Proxy(window.CanvasRenderingContext2D.prototype.stroke, { apply:function(a, b, c) {
+    if(path.length === 1 && path[0].length === 2 && path[0][0].y === path[0][1].y) {
+      lastPaths[0] = lastPaths[1]
+      lastPaths[1] = lastPaths[2]
+      lastPaths[2] = [path[0][0].x, path[0][1].x, path[0][0].y, b.getTransform()]
+    }
+    return Reflect.apply(a, b, c)
+  } })
+  window.CanvasRenderingContext2D.prototype._fill = window.CanvasRenderingContext2D.prototype.fill
+  window.CanvasRenderingContext2D.prototype.fill = new Proxy(window.CanvasRenderingContext2D.prototype.fill, { apply:function(a, b, c) {
+    lastFill = b.fillStyle
+    return Reflect.apply(a, b, c)
+  } })
+  window.requestAnimationFrame = new Proxy(window.requestAnimationFrame, { apply:function(a, b, c) {
+    return beforeAnimationFrame(a, b, c)
+  } })
+  const interval = setInterval(function() {
+    if(document.body) {
+      clearInterval(interval)
+      main()
+    }
+  })
+  if(0) {
+    window.WebAssembly.instantiateStreaming = new Proxy(window.WebAssembly.instantiateStreaming, { apply:function(a, b, c) {
+      let d = new Response()
+      c[0] = d
+      return Reflect.apply(a, b, c)
+    } })
+  }
+  const listeners = {}, trigger = function(type, data) {
+    if(listeners[type]) { listeners[type](data) }
+  }
+  const listenerApply = function(a, b, c) {
+    if(c[0] === 'mousemove') {
+      listeners.mousemove = c[1]
+    }
+    if(c[0] === 'blur' || c[0] === 'focus' || c[0] === 'visibilitychange') {
+      return
+    }
+    if(b && b.id === 'canvas') {
+      if(c[0] === 'mousedown') {
+        listeners.mousedown = c[1]
+      }
+    }
+    if(c[0] === 'mouseup') {
+      listeners.mouseup = c[1]
+    }
+    if(c[0] === 'keydown') {
+      listeners.keydown = c[1]
+    }
+    if(c[0] === 'keyup') {
+      listeners.keyup = c[1]
+    }
+    return Reflect.apply(a, b, c)
+  }
+  const clickAt = function(x, y) {
+    let ir = 1 / window.devicePixelRatio
+    x *= ir
+    y *= ir
+    listeners.mousemove({
+      clientX: x,
+      screenX: x,
+      clientY: y,
+      screenY: y
+    })
+    listeners.mousedown({
+      preventDefault: function() {},
+      clientX: x,
+      clientY: y
+    })
+    listeners.mouseup({
+      preventDefault: function() {},
+      clientX: x,
+      clientY: y
+    })
+  }
+  const clickButton = function(text) {
+    if(buttons[text]) {
+      if(buttons[text].d > 0.01) {
+        return
+      }
+      let n = performance.now()
+      if(n - buttons[text].s < 2000) {
+        return
+      }
+      clickAt(buttons[text].x, buttons[text].y)
+      return true
+    }
+  }
+  HTMLElement.prototype._addEventListener = HTMLElement.prototype.addEventListener
+  HTMLElement.prototype.addEventListener = new Proxy(HTMLElement.prototype.addEventListener, { apply:listenerApply })
+  window.addEventListener = new Proxy(window.addEventListener, { apply:listenerApply })
+  document.addEventListener = new Proxy(document.addEventListener, { apply:listenerApply })
+  localStorage.florrio_tutorial = 'complete'
+})();
+ 
+var obj =
+    {
+        rarity: 0,
+        id: 1,
+        aim: 5,
+        basicId: 605463,
+        find: {
+            petal: "Basic",
+            value: [5, 0, 0, 0, 0, 0, 0, 0]
+        },
+        config: {
+            top: false,
+            left: false,
+            x: "-20px",
+            y: "-20px",
+            scale: 1,
+            key: "Equal"
+        },
+        version: "1.2",
+        versionHash: versionHash,
+        autoFind: true,
+        multipleCounting: {
+            enable: false,
+            petal: {
+                "Common Basic": 5,
+                "Common Light": 5
+            },
+            key: "Minus"
+        }
+    },
+    petal = "Common Basic",
+    rarityArr = [
+        "Common",
+        "Unusual",
+        "Rare",
+        "Epic",
+        "Legendary",
+        "Mythic",
+        "Ultra",
+        "Super"
+    ],
+    rarityColors = [
+        "#7EEF6D",
+        "#FFE65D",
+        "#4D52E3",
+        "#861FDE",
+        "#DE1F1F",
+        "#1FDBDE",
+        "#FF2B75",
+        "#2BFFA3",
+    ],
+    petalArr = [
+        "Basic",
+        "Light",
+        "Rock",
+        "Square",
+        "Rose",
+        "Stinger",
+        "Iris",
+        "Wing",
+        "Missile",
+        "Grapes",
+        "Cactus",
+        "Faster",
+        "Bubble",
+        "Pollen",
+        "Dandelion",
+        "Beetle Egg",
+        "Antennae",
+        "Heavy",
+        "Yin Yang",
+        "Web",
+        "Honey",
+        "Leaf",
+        "Salt",
+        "Rice",
+        "Corn",
+        "Sand",
+        "Pincer",
+        "Yucca",
+        "Magnet",
+        "Yggdrasil",
+        "Starfish",
+        "Pearl",
+        "Lightning",
+        "Jelly",
+        "Claw",
+        "Shell",
+        "Cutter",
+        "Dahlia",
+        "Uranium",
+        "Sponge",
+        "Soil",
+        "Fangs",
+        "Third Eye",
+        "Peas",
+        "Stick",
+        "Clover",
+        "Powder",
+        "Air",
+        "Basil",
+        "Orange",
+        "Ant Egg",
+        "Poo",
+        "Relic",
+        "Lotus",
+        "Bulb",
+        "Cotton",
+        "Carrot",
+        "Bone",
+        "Plank",
+        "Tomato",
+        "Mark",
+        "Rubber",
+        "Blood Stinger",
+        "Bur",
+        "Root",
+        "Ankh",
+        "Dice",
+        "Talisman",
+        "Battery",
+        "Amulet",
+        "Compass",
+        "Disc",
+        "Shovel",
+        "Coin",
+        "Chip",
+        "Card",
+        "Moon",
+        "Privet",
+        "Glass"
+    ]
+ 
+function getNewPetal(petalName) {
+    var tempObj = {
+        id : 1,
+        rarity: 0,
+        petal: ""
+    }
+    if (petalName.split(" ").length <= 0) return
+    if (petalName.split(" ").length == 1) {
+        if (petalName.startsWith("un")) tempObj.rarity = "Unusual"
+        else if (petalName.startsWith("r")) tempObj.rarity = "Rare"
+        else if (petalName.startsWith("e")) tempObj.rarity = "Epic"
+        else if (petalName.startsWith("l")) tempObj.rarity = "Legendary"
+        else if (petalName.startsWith("m")) tempObj.rarity = "Mythic"
+        else if (petalName.startsWith("u")) tempObj.rarity = "Ultra"
+        else if (petalName.startsWith("s")) tempObj.rarity = "Super"
+        else tempObj.rarity = "Common"
+        tempObj.id = stringSimilarity.findBestMatch(petalName.slice(1), petalArr)
+        petalName = tempObj.rarity + " " + tempObj.id.bestMatch.target
+        tempObj.rarity = rarityArr.indexOf(tempObj.rarity)
+    } else {
+        tempObj.rarity = stringSimilarity.findBestMatch(petalName.split(" ").shift(), rarityArr)
+        tempObj.id = stringSimilarity.findBestMatch(petalName.split(" ").splice(1).join(" "), petalArr)
+        petalName = tempObj.rarity.bestMatch.target + " " + tempObj.id.bestMatch.target
+        tempObj.rarity = tempObj.rarity.bestMatchIndex
+    }
+    tempObj.id = tempObj.id.bestMatchIndex + 1
+    tempObj.petal = petalName
+    return tempObj
+}
+var thisNewPetal = getNewPetal(petal)
+obj.id = thisNewPetal.id
+obj.rarity = thisNewPetal.rarity
+petal = thisNewPetal.petal
+ 
+function findSequence(seq, mem) {
+    let match = 0
+    for (let addr = 0; addr < mem.length; addr++) {
+        if (mem[addr] === seq[match]) match++
+        else if (mem[addr] === seq[0]) match = 1
+        else match = 0
+        if (match === seq.length) return addr - match + 1
+    }
+}
+ 
+// https://stackoverflow.com/questions/47011055/smooth-vertical-scrolling-on-mouse-wheel-in-vanilla-javascript
+function SmoothScroll(target, speed, smooth) {
+    if (target === document) target = (document.scrollingElement || document.documentElement || document.body.parentNode || document.body)
+    var moving = false
+    var pos = target.scrollTop
+    var frame = target === document.body && document.documentElement ? document.documentElement : target
+    target.addEventListener('mousewheel', scrolled, { passive: false })
+    target.addEventListener('DOMMouseScroll', scrolled, { passive: false })
+    function scrolled(e) {
+        e.preventDefault()
+        var delta = normalizeWheelDelta(e)
+        pos += -delta * speed
+        pos = Math.max(0, Math.min(pos, target.scrollHeight - frame.clientHeight))
+        if (!moving) update()
+    }
+    function normalizeWheelDelta(e) {
+        if(e.detail) {
+            if(e.wheelDelta) return e.wheelDelta/e.detail/40 * (e.detail>0 ? 1 : -1)
+            else return -e.detail / 3
+        } else return e.wheelDelta / 120
+    }
+    function update() {
+        moving = true
+        var delta = (pos - target.scrollTop) / smooth
+        target.scrollTop += delta
+        if (Math.abs(delta) > 0.5) requestFrame(update)
+        else moving = false
+    }
+    var requestFrame = function() {
+        return (window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(func) {window.setTimeout(func, 1000 / 50)})
+    }();
+}
+ 
+if (localStorage.getItem('petalFarmingCounter') == null) {
+    localStorage.setItem('petalFarmingCounter', JSON.stringify(obj))
+    setTimeout(() => {
+        toggleCon()
+        conCon.scrollTo(0, 110)
+    }, 5000)
+}
+else {
+    var thisObj = JSON.parse(localStorage.getItem('petalFarmingCounter'))
+    if (thisObj.version != obj.version) {
+        thisObj.version = obj.version
+        setTimeout(() => {
+            toggleCon()
+            conCon.scrollTo(0, 110)
+        }, 5000)
+    }
+    if (thisObj.versionHash != versionHash) {
+        thisObj.versionHash = versionHash
+        if (thisObj.autoFind) {
+            setInterval(() => {
+                thisObj.basicId = findSequence(thisObj.find.value, unsafeWindow.Module.HEAPU32) - ((stringSimilarity.findBestMatch(thisObj.find.petal, petalArr).bestMatchIndex + 1) * 8) + 8
+                document.getElementById("Capply").innerHTML = `Basic ID: ${coloringValue(thisObj.basicId)}`
+                var thisObj_ = JSON.parse(localStorage.getItem('petalFarmingCounter'))
+                thisObj_.basicId = thisObj.basicId
+                localStorage.setItem('petalFarmingCounter', JSON.stringify(thisObj_))
+            }, 10000)
+        }
+    }
+    if (Object.keys(thisObj.multipleCounting.petal).length < 2) thisObj.multipleCounting.petal = obj.multipleCounting.petal
+    Object.keys(obj).forEach(k => {
+        if (!Object.keys(thisObj).includes(k)) thisObj[k] = obj[k]
+    })
+    obj = thisObj
+    localStorage.setItem('petalFarmingCounter', JSON.stringify(thisObj))
+}
+ 
+var thisPetalObj = {}
+for (const [index, [key, value]] of Object.entries(Object.entries(obj.multipleCounting.petal))) {
+    thisPetalObj[index] = {
+        id: getNewPetal(key).id,
+        rarity: getNewPetal(key).rarity,
+        aim: value,
+    }
+}
+ 
+var container = document.createElement("div")
+container.id = "container"
+container.style = `
+    padding: 5px;
+    height: 24px;
+    width: 350px;
+    position: absolute;
+    transform: translate(${obj.config.x}, ${obj.config.y}) scale(${obj.config.scale});
+    background: #333333;
+    border-radius: 24px;
+    transition: all 1s ease-in-out;
+    opacity: 1;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+    pointer-events: all;
+    cursor: pointer;
+    overflow: hidden;
+`
+container.onclick = function() {
+    toggleCon()
+}
+ 
+function toggleCon() {
+    if (conCon.style.overflow == "hidden") {
+        container.style.height = "300px"
+        container.style.width = "400px"
+        conCon.style.overflow = "hidden scroll"
+        container.style.borderRadius = "5px"
+        barProgress.style.maxHeight = "300px"
+        barProgress.style.maxWidth = "400px"
+        barProgress.style.height = "300px"
+        barProgress.style.width = "400px"
+        barProgress.style.borderRadius = "0px"
+        barProgress.style.opacity = 0
+        barProgress.style.background = "#1FDBDE"
+        barProgress.style.pointerEvents = "none"
+        barText.style.opacity = 0
+        settings.style.pointerEvents = "all"
+        settings.style.opacity = 1
+        changelog.style.pointerEvents = "all"
+        changelog.style.opacity = 1
+    } else {
+        container.style.height = "24px"
+        container.style.width = "350px"
+        conCon.style.overflow = "hidden"
+        container.style.borderRadius = "24px"
+        barProgress.style.maxHeight = "24px"
+        barProgress.style.maxWidth = "350px"
+        barProgress.style.height = "24px"
+        barProgress.style.width = "350px"
+        barProgress.style.borderRadius = "24px"
+        barProgress.style.opacity = 1
+        barProgress.style.background = "#F5FF65"
+        barProgress.style.pointerEvents = "all"
+        barText.style.opacity = 1
+        settings.style.pointerEvents = "none"
+        settings.style.opacity = 0
+        changelog.style.pointerEvents = "none"
+        changelog.style.opacity = 0
+        updateProgress()
+        updateMultiProgress()
+    }
+}
+document.querySelector('body').appendChild(container)
+ 
+var conCon = document.createElement("div")
+conCon.style = `
+    overflow: hidden;
+    height: 300px;
+`
+container.appendChild(conCon)
+ 
+new SmoothScroll(conCon, 90, 7)
+ 
+containerPos()
+ 
+petal = rarityArr[obj.rarity] + " " + petalArr[obj.id - 1]
+thisNewPetal = getNewPetal(petal)
+obj.id = thisNewPetal.id
+obj.rarity = thisNewPetal.rarity
+petal = thisNewPetal.petal
+function convertNumber(value) {
+    return Math.abs(Number(value)) >= 1.0e+9
+        ? (Math.abs(Number(value)) / 1.0e+9).toFixed(2) + "B"
+    : Math.abs(Number(value)) >= 1.0e+6
+        ? (Math.abs(Number(value)) / 1.0e+6).toFixed(2) + "M"
+    : Math.abs(Number(value)) >= 1.0e+3
+        ? (Math.abs(Number(value)) / 1.0e+3).toFixed(2) + "K"
+    : Math.abs(Number(value))
+}
+ 
+function containerPos() {
+    if (obj.config.top) {
+        container.style.top = "0"
+        container.style.bottom = "unset"
+    } else {
+        container.style.top = "unset"
+        container.style.bottom = "0"
+    }
+ 
+    if (obj.config.left) {
+        container.style.left = "0"
+        container.style.right = "unset"
+    } else {
+        container.style.left = "unset"
+        container.style.right = "0"
+    }
+ 
+    container.style.transform = `translate(${obj.config.x}, ${obj.config.y}) scale(${obj.config.scale})`
+}
+ 
+function coloringBool(bool) {
+    if (bool) return `<a style="color: #2BFFA3">${bool}</a>`
+    else return `<a style="color: #DB5A5A">${bool}</a>`
+}
+ 
+function coloringValue(value) {
+    return `<a style="color: #DBD74B">${value}</a>`
+}
+ 
+function coloringFunction(value) {
+    return `<a style="color: #1FDBDE">${value}</a>`
+}
+ 
+obj.aim = Math.abs(Math.floor(obj.aim))
+obj.aim = obj.aim == 0 ? 1 : obj.aim
+ 
+function updateMultiProgress() {
+    var multiProgressInnerHTML = "",
+        thisMultiProgressValue
+    if (obj.multipleCounting.enable) {
+        for (const [index, [key, value]] of Object.entries(Object.entries(obj.multipleCounting.petal))) {
+            thisMultiProgressValue = unsafeWindow.Module.HEAPU32[obj.basicId + (getNewPetal(key).id * 8) - (8 - getNewPetal(key).rarity)]
+            multiProgressInnerHTML += `
+        <br>
+        <div style="margin-top: 5px">
+            <div style="text-align: left; float: left; position: relative; top: -15px;">${key}</div>
+            <div style="text-align: right; float: right; position: relative; top: -15px;">${convertNumber(thisMultiProgressValue)}/${convertNumber(value)}</div>
+        </div>
+        <div style="width: 99%;height: 7px;background: #222;border-radius: 5px;padding: 3px;margin: 2px 0 5px 0;">
+            <div style="width: ${thisMultiProgressValue / value * 100}%;max-width:100%;background: ${rarityColors[getNewPetal(key).rarity]};height: 100%;border-radius: 3px; transition: all 1s ease-in-out;"></div>
+        </div>
+    `
+        }
+        multiProgress.innerHTML = multiProgressInnerHTML
+    }
+}
+var multiProgress = document.createElement("div")
+multiProgress.style = `
+    top: 20px;
+    right: -290px;
+    width: 250px;
+    height: auto;
+    max-height: 200px;
+    background: #333333;
+    position: absolute;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+    overflow: hidden scroll;
+    color: white;
+    font-family: 'Ubuntu';
+    transition: all 1s ease-in-out;
+    font-size: 12px;
+    text-shadow: rgb(0 0 0) 2px 0px 0px, rgb(0 0 0) 1.75517px 0.958851px 0px, rgb(0 0 0) 1.0806px 1.68294px 0px, rgb(0 0 0) 0.141474px 1.99499px 0px, rgb(0 0 0) -0.832294px 1.81859px 0px, rgb(0 0 0) -1.60229px 1.19694px 0px, rgb(0 0 0) -1.97998px 0.28224px 0px, rgb(0 0 0) -1.87291px -0.701566px 0px, rgb(0 0 0) -1.30729px -1.5136px 0px, rgb(0 0 0) -0.421592px -1.95506px 0px, rgb(0 0 0) 0.567324px -1.91785px 0px, rgb(0 0 0) 1.41734px -1.41108px 0px, rgb(0 0 0) 1.92034px -0.558831px 0px;
+`
+document.querySelector("body").appendChild(multiProgress)
+new SmoothScroll(multiProgress, 90, 7)
+ 
+function multiProgressToggle() {
+    multiProgress.style.right = multiProgress.style.right == "20px" ? "-290px" : "20px"
+}
+var settings = document.createElement("div")
+settings.style = `
+    padding: 10px;
+    color: white;
+    font-family: 'Ubuntu';
+    z-index: 1;
+    font-size: 12px;
+    line-height: 15px;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+    pointer-events: none;
+    text-shadow: rgb(0 0 0) 2px 0px 0px, rgb(0 0 0) 1.75517px 0.958851px 0px, rgb(0 0 0) 1.0806px 1.68294px 0px, rgb(0 0 0) 0.141474px 1.99499px 0px, rgb(0 0 0) -0.832294px 1.81859px 0px, rgb(0 0 0) -1.60229px 1.19694px 0px, rgb(0 0 0) -1.97998px 0.28224px 0px, rgb(0 0 0) -1.87291px -0.701566px 0px, rgb(0 0 0) -1.30729px -1.5136px 0px, rgb(0 0 0) -0.421592px -1.95506px 0px, rgb(0 0 0) 0.567324px -1.91785px 0px, rgb(0 0 0) 1.41734px -1.41108px 0px, rgb(0 0 0) 1.92034px -0.558831px 0px;
+`
+conCon.appendChild(settings)
+ 
+var settings_transform = document.createElement("div")
+settings_transform.innerHTML = `
+    <div style="font-size: 18px; margin-bottom: 10px; text-align: center;">Settings</div>
+    <div id="sProgress" style="font-size: 15px; margin-top: 5px; margin-bottom: 5px;">Progress Counter</div>
+    <div id="kProgress" style="margin-left: 10px; height: 0px; opacity: 0; pointer-events: none;">
+        <div id="Cpetal">Petal: ${coloringValue(petal)}</div>
+        <div id="Caim">Aim: ${coloringValue(obj.aim)}</div>
+        <br>
+        <div id="CMultiple_Toggle">Multiple counting: ${coloringBool(obj.multipleCounting.enable)}</div>
+        <div id="CMultiple_petal">Petals: ${coloringValue(JSON.stringify(obj.multipleCounting.petal, null, "\u2001").replaceAll("\n", "<br>"))}</div>
+        <div id="CMultiple_key">Key: ${coloringValue(obj.multipleCounting.key)}</div>
+        <div id="CMultiple_view">${coloringFunction("View Progresses")}</div>
+    </div>
+    <div id="sTransform" style="font-size: 15px; margin-top: 5px; margin-bottom: 5px;">Position & Scale</div>
+    <div id="kTransform" style="margin-left: 10px; height: 0px; opacity: 0; pointer-events: none;">
+        <div id="Ctop">top: ${coloringBool(obj.config.top)}</div>
+        <div id="Cleft">left: ${coloringBool(obj.config.left)}</div>
+        <div id="CposX">x: ${coloringValue(obj.config.x)}</div>
+        <div id="CposY">y: ${coloringValue(obj.config.y)}</div>
+        <div id="Cscale">scale: ${coloringValue(obj.config.scale)}</div>
+        <div id="CkeyToggle">Key: ${coloringValue(obj.config.key)}</div>
+    </div>
+    <div id="sFindId" style="font-size: 15px; margin-top: 5px; margin-bottom: 5px;">Find & Apply Basic ID</div>
+    <div id="kFindId" style="margin-left: 10px; height: 0px; opacity: 0; pointer-events: none;">
+        <div id="Cfind">${coloringFunction("Find & Apply")}</div>
+        <div id="Capply">Basic ID: ${coloringValue(obj.basicId)}</div>
+        <div id="CautoFind">Auto Update: ${coloringBool(obj.autoFind)}</div>
+        <div id="Cinstruction">${coloringFunction("How to use?")}</div>
+    </div>
+`
+settings.appendChild(settings_transform);
+ 
+["sProgress", "sTransform", "sFindId"].forEach(x => {
+    document.getElementById(x).onclick = function(e) {
+        e.stopPropagation()
+        var kTransform = document.getElementById("k"+ this.id.slice(1))
+        if (kTransform.style.opacity != 1) {
+            kTransform.style.opacity = 1
+            kTransform.style.height = "auto"
+            kTransform.style.pointerEvents = "all"
+        } else {
+            kTransform.style.opacity = 0
+            kTransform.style.height = "0px"
+            kTransform.style.pointerEvents = "none"
+        }
+    };
+});
+ 
+["Cpetal", "Caim", "CMultiple_Toggle", "CMultiple_petal", "CMultiple_key", "CMultiple_view", "Ctop", "Cleft", "CposX", "CposY", "Cscale", "CkeyToggle", "Cfind", "Capply", "CautoFind", "Cinstruction"].forEach(x => {
+    document.getElementById(x).onclick = function(e) {
+        e.stopPropagation()
+        var value = "",
+            value2 = [],
+            endTime = 0,
+            keysPressed = []
+        if (["Cpetal", "Caim", "CMultiple_Toggle", "CMultiple_petal", "CMultiple_aim", "CMultiple_key", "CMultiple_view"].includes(this.id)) {
+            if (["Cpetal"].includes(this.id)) {
+                value = prompt('Petal name?', petal)
+                if (petal == null) return
+                petal = value
+                var thisNewPetal = getNewPetal(petal)
+                obj.id = thisNewPetal.id
+                obj.rarity = thisNewPetal.rarity
+                petal = thisNewPetal.petal
+                this.innerHTML = `Petal: ${coloringValue(petal)}`
+                barText.innerHTML = `${petal}: ${convertNumber(thisPetal)} / ${convertNumber(obj.aim)} (${(thisPetal * 100 / obj.aim).toFixed(2)}%)`
+            } else if (["Caim"].includes(this.id)) {
+                value = prompt('Aim?', obj.aim)
+                if (value == null) return
+                if (isNaN(value)) return alert(`Invalid input: [Aim] must be a number!`)
+                obj.aim = Number(value)
+                obj.aim = Math.abs(Math.floor(obj.aim))
+                obj.aim = obj.aim == 0 ? 1 : obj.aim
+                this.innerHTML = `Aim: ${coloringValue(obj.aim)}`
+            } else if (["CMultiple_Toggle"].includes(this.id)) {
+                value = !obj.multipleCounting.enable
+                this.innerHTML = `Multiple counting: ${coloringBool(value)}`
+                obj.multipleCounting.enable = value
+            } else if (["CMultiple_petal"].includes(this.id)) {
+                var count = 0,
+                    petalObj = {},
+                    thisPetalId, thisPetalRarity,
+                    thisPetalObj = {}
+                while (true) {
+                    value = prompt(`${count + 1}. Petal name: Aim\nClick Cancel to Save & Exit`, `${Object.keys(obj.multipleCounting.petal)[count]}: ${Object.values(obj.multipleCounting.petal)[count]}`)
+                    if (value == null) {
+                        if (Object.keys(petalObj).length < 2) petalObj = obj.multipleCounting.petal
+                        obj.multipleCounting.petal = petalObj
+                        for (const [index, [key, value]] of Object.entries(Object.entries(obj.multipleCounting.petal))) {
+                            thisPetalObj[index] = {
+                                id: getNewPetal(key).id,
+                                rarity: getNewPetal(key).rarity,
+                                aim: value,
+                            }
+                        }
+                        this.innerHTML = `Petals: ${coloringValue(JSON.stringify(obj.multipleCounting.petal, null, "\u2001").replaceAll("\n", "<br>"))}`
+                        localStorage.setItem('petalFarmingCounter', JSON.stringify(obj))
+                        return
+                    }
+                    value = value.split(":").map(x => x.trim())
+                    if (isNaN(value[1])) {
+                        alert(`Invalid input: [Aim] must be a number!`)
+                        continue
+                    }
+                    petalObj[getNewPetal(value[0]).petal] = Number(value[1])
+                    count++
+                }
+            } else if (["CMultiple_key"].includes(this.id)) {
+                endTime = Date.now() + 5 * 1000
+                this.innerHTML = `Key: <a class="blink">Press a key!</a>`
+                var keyInterval_ = setInterval(() => {
+                    keysPressed.unshift(lastKey)
+                    if (keysPressed.length > 2) keysPressed.splice(2)
+                    if (keysPressed[keysPressed.length - 1] != keysPressed[0]) {
+                        obj.multipleCounting.key = keysPressed[0]
+                        this.innerHTML = `Key: ${coloringValue(keysPressed[0])}`
+                        clearInterval(keyInterval_)
+                        localStorage.setItem('petalFarmingCounter', JSON.stringify(obj))
+                        return
+                    }
+                    if (Date.now() > endTime) {
+                        this.innerHTML = `Key: ${coloringValue(obj.multipleCounting.key)}`
+                        clearInterval(keyInterval_)
+                        return
+                    }
+                });
+            } else if (["CMultiple_view"].includes(this.id)) multiProgressToggle()
+        } else if (["Ctop", "Cleft", "CposX", "CposY", "Cscale", "CkeyToggle"].includes(this.id)) {
+            if (["Ctop", "Cleft"].includes(this.id)) {
+                value = !obj.config[x.slice(1)]
+                this.innerHTML = `${x.slice(1)}: ${coloringBool(value)}`
+                obj.config[x.slice(1)] = value
+            } else if (["CposX", "CposY"].includes(this.id)) {
+                value = prompt(x.slice(1), obj.config[x[x.length - 1].toLowerCase()].slice(0, -2))
+                if (value == null) return
+                if (isNaN(value)) return alert(`Invalid input: [${x.slice(1)}] must be a number!`)
+                value = Number(value)
+                this.innerHTML = `${x[x.length - 1].toLowerCase()}: ${coloringValue(value + "px")}`
+                obj.config[x[x.length - 1].toLowerCase()] = value + "px"
+            } else if (["Cscale"].includes(this.id)) {
+                value = prompt(x.slice(1), obj.config[x.slice(1)])
+                if (value == null) return
+                if (isNaN(value)) return alert(`Invalid input: [${x.slice(1)}] must be a number!`)
+                value = Number(value)
+                if (value == 0) return
+                this.innerHTML = `${x.slice(1)}: ${coloringValue(value)}`
+                obj.config[x.slice(1)] = value
+            } else if (["CkeyToggle"].includes(this.id)) {
+                endTime = Date.now() + 5 * 1000
+                this.innerHTML = `Key: <a class="blink">Press a key!</a>`
+                var keyInterval = setInterval(() => {
+                    keysPressed.unshift(lastKey)
+                    if (keysPressed.length > 2) keysPressed.splice(2)
+                    if (keysPressed[keysPressed.length - 1] != keysPressed[0]) {
+                        obj.config.key = keysPressed[0]
+                        this.innerHTML = `Key: ${coloringValue(keysPressed[0])}`
+                        clearInterval(keyInterval)
+                        localStorage.setItem('petalFarmingCounter', JSON.stringify(obj))
+                        return
+                    }
+                    if (Date.now() > endTime) {
+                        this.innerHTML = `Key: ${coloringValue(obj.config.key)}`
+                        clearInterval(keyInterval)
+                        return
+                    }
+                });
+            }
+            containerPos()
+        } else if (["Cfind", "Capply", "CautoFind", "Cinstruction"].includes(this.id)) {
+            if (["Cfind"].includes(this.id)) {
+                var thisPetalName = ""
+                value = prompt("Petal?", obj.find.petal)
+                value = stringSimilarity.findBestMatch(value, petalArr)
+                thisPetalName = value.bestMatch.target
+                value = value.bestMatchIndex + 1
+                rarityArr.forEach((x, i) => {
+                    var temporaryValue = prompt(`Amount of ${x} ${thisPetalName}`, obj.find.value[i])
+                    if (temporaryValue == null) temporaryValue = 0
+                    if (isNaN(temporaryValue)) temporaryValue = 0
+                    value2.push(Number(temporaryValue))
+                })
+                obj.find.petal = thisPetalName
+                obj.find.value = value2
+                obj.basicId = findSequence(value2, unsafeWindow.Module.HEAPU32) - (value * 8) + 8
+                document.getElementById("Capply").innerHTML = `Basic ID: ${coloringValue(obj.basicId)}`
+            } else if (["Capply"].includes(this.id)) {
+                value = prompt('Basic ID?', obj.basicId)
+                if (value == null) return
+                if (isNaN(value)) return
+                obj.basicId = Number(value)
+                this.innerHTML = `Basic ID: ${coloringValue(obj.basicId)}`
+            } else if (["CautoFind"].includes(this.id)) {
+                value = !obj.autoFind
+                this.innerHTML = `Auto Update: ${coloringBool(value)}`
+                obj.autoFind = value
+            } else if (["Cinstruction"].includes(this.id)) window.open("https://youtu.be/W2K6mWIzmHA?si=JWHOLJ67LSntThGW");
+        }
+        localStorage.setItem('petalFarmingCounter', JSON.stringify(obj))
+    }
+})
+ 
+var changelog = document.createElement("div")
+changelog.style = `
+    padding: 10px;
+    color: white;
+    font-family: 'Ubuntu';
+    z-index: 1;
+    font-size: 12px;
+    line-height: 15px;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+    pointer-events: none;
+    text-shadow: rgb(0 0 0) 2px 0px 0px, rgb(0 0 0) 1.75517px 0.958851px 0px, rgb(0 0 0) 1.0806px 1.68294px 0px, rgb(0 0 0) 0.141474px 1.99499px 0px, rgb(0 0 0) -0.832294px 1.81859px 0px, rgb(0 0 0) -1.60229px 1.19694px 0px, rgb(0 0 0) -1.97998px 0.28224px 0px, rgb(0 0 0) -1.87291px -0.701566px 0px, rgb(0 0 0) -1.30729px -1.5136px 0px, rgb(0 0 0) -0.421592px -1.95506px 0px, rgb(0 0 0) 0.567324px -1.91785px 0px, rgb(0 0 0) 1.41734px -1.41108px 0px, rgb(0 0 0) 1.92034px -0.558831px 0px;
+`
+changelog.innerHTML = `
+    <div style="font-size: 18px; margin-bottom: 10px; text-align: center;">Hackering (By kit2d2alt)</div>
+    <div style="color: #1FDBDE; font-size: 15px; margin-top: 5px; margin-bottom: 5px">7/15/24 - v1.3</div>
+    <div style="margin-left: 10px">
+        - Added counting script from Furaken.<br>
+        - Added ${coloringValue("Auto update ID")} (this requires you to use ${coloringValue("Find & Apply")} at least one times).
+    </div>
+    <div style="color: #1FDBDE; font-size: 15px; margin-top: 5px; margin-bottom: 5px">5/15/24 - v1.1</div>
+    <div style="margin-left: 10px">
+        - Updated tracers and removed some detectable features.
+    </div>
+`
+conCon.appendChild(changelog)
+ 
+var barText = document.createElement("div")
+barText.style = `
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 100%;
+    color: white;
+    font-family: 'Ubuntu';
+    text-align: center;
+    transition: all 1s ease-in-out;
+    text-wrap: nowrap;
+    z-index: 1;
+    pointer-events: none;
+    font-size: 14px;
+    text-shadow: rgb(0 0 0) 2px 0px 0px, rgb(0 0 0) 1.75517px 0.958851px 0px, rgb(0 0 0) 1.0806px 1.68294px 0px, rgb(0 0 0) 0.141474px 1.99499px 0px, rgb(0 0 0) -0.832294px 1.81859px 0px, rgb(0 0 0) -1.60229px 1.19694px 0px, rgb(0 0 0) -1.97998px 0.28224px 0px, rgb(0 0 0) -1.87291px -0.701566px 0px, rgb(0 0 0) -1.30729px -1.5136px 0px, rgb(0 0 0) -0.421592px -1.95506px 0px, rgb(0 0 0) 0.567324px -1.91785px 0px, rgb(0 0 0) 1.41734px -1.41108px 0px, rgb(0 0 0) 1.92034px -0.558831px 0px;
+`
+container.appendChild(barText)
+ 
+var barProgress = document.createElement("div")
+barProgress.style = `
+    background: #F5FF65;
+    border-radius: 24px;
+    width: 0px;
+    max-width: 350px;
+    max-height: 24px;
+    transition: all 1s ease-in-out;
+    opacity: 0;
+    height: 0px;
+    top: 50%;
+    position: absolute;
+    transform: translate(0px, -50%);
+`
+container.appendChild(barProgress)
+barText.innerHTML = `${petal}: 0 / ${convertNumber(obj.aim)} (0.00%)`
+ 
+var thisPetal, thisWidth, thisAim, thisPetalObj_
+function updateProgress() {
+    if (!obj.multipleCounting.enable) {
+        thisPetal = unsafeWindow.Module.HEAPU32[obj.basicId + (obj.id * 8) - (8 - obj.rarity)]
+        thisAim = obj.aim
+    } else {
+        thisPetal = 0
+        thisAim = 0
+        thisPetalObj_ = {}
+        for (const [index, [key, value]] of Object.entries(Object.entries(obj.multipleCounting.petal))) {
+            thisPetalObj_[index] = {
+                id: getNewPetal(key).id,
+                rarity: getNewPetal(key).rarity,
+                aim: value,
+            }
+        }
+        for (const [index, [key, value]] of Object.entries(Object.entries(thisPetalObj_))) {
+            thisPetal += Number(unsafeWindow.Module.HEAPU32[obj.basicId + (value.id * 8) - (8 - value.rarity)])
+            thisAim += Number(value.aim)
+        }
+    }
+    thisWidth = container.style.width.slice(0, -2) * thisPetal / thisAim
+    barProgress.style.height = thisWidth + "px"
+    barProgress.style.width = thisWidth + "px"
+    barProgress.style.opacity = thisPetal / (thisAim * 0.08)
+    if (!obj.multipleCounting.enable) barText.innerHTML = `${petal}: ${convertNumber(thisPetal)} / ${convertNumber(thisAim)} (${(thisPetal * 100 /thisAim).toFixed(2)}%)`
+    else barText.innerHTML = `${Object.keys(obj.multipleCounting.petal).length} petals: ${convertNumber(thisPetal)} / ${convertNumber(thisAim)} (${(thisPetal * 100 / thisAim).toFixed(2)}%)`
+}
+ 
+setInterval(() => {
+    if (conCon.style.overflow != "hidden") return
+    updateProgress()
+    updateMultiProgress()
+}, 10000)
+ 
+var lastKey
+document.documentElement.addEventListener("keydown", function (e) {
+    lastKey = e.code
+    if (event.code == obj.config.key) {
+        if (container.style.opacity == "0") {
+            container.style.opacity = 1
+            container.style.pointerEvents = "all"
+            settings.style.pointerEvents = "all"
+            changelog.style.pointerEvents = "all"
+        } else {
+            container.style.opacity = 0
+            container.style.pointerEvents = "none"
+            settings.style.pointerEvents = "none"
+            changelog.style.pointerEvents = "none"
+        }
+    }
+    if (event.code == obj.multipleCounting.key) multiProgressToggle()
+})
+ 
+document.querySelector('canvas').onclick = function () {
+    container.style.height = "20px"
+    container.style.width = "300px"
+    conCon.style.overflow = "hidden"
+    container.style.borderRadius = "20px"
+    barProgress.style.maxHeight = "20px"
+    barProgress.style.maxWidth = "300px"
+    barProgress.style.height = "20px"
+    barProgress.style.width = "300px"
+    barProgress.style.borderRadius = "20px"
+    barProgress.style.opacity = 1
+    barProgress.style.background = "#F5FF65"
+    barProgress.style.pointerEvents = "all"
+    barText.style.opacity = 1
+    settings.style.pointerEvents = "none"
+    settings.style.opacity = 0
+    changelog.style.pointerEvents = "none"
+    changelog.style.opacity = 0
+    updateProgress()
+    updateMultiProgress()
+}
+ 
+GM_addStyle(`
+@keyframes blink {
+    0% {color: #DBD74B}
+    50% {color: #1FDBDE}
+    100% {color: #DBD74B}
+}
+ 
+.blink {
+    animation-name: blink;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+ 
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: #00000000;
+}
+::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #444;
+}
+`)
