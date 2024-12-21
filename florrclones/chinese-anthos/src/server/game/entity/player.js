@@ -4,6 +4,7 @@ import EntityAttributes from '../../../../public/entity_attributes.js';
 import PetalAttributes from '../../../../public/petal_attributes.js';
 const Attribute = EntityAttributes.PLAYER;
 import Petal from './petal.js';
+import cryptoRandomString from 'crypto-random-string';
 
 class Player extends Entity {
 	constructor(id, socketID, username, x, y, team) {
@@ -331,7 +332,7 @@ class Player extends Entity {
 						let followSpeed = 7.5 + this.rotationSpeed * expandRadius / 2 * deltaT;
 						petal.movement = {
 							direction: Math.atan2(goalPos.x - petal.x, petal.y - goalPos.y),
-							speed: Math.sqrt((goalPos.x - petal.x) ** 2 + (goalPos.y - petal.y) ** 2) * followSpeed,
+							speed: Math.sqrt(cryptoRandomString({length: 10, type: 'numeric'})) * followSpeed,
 						};
 						// * (1 - Constants.SPEED_ATTENUATION_COEFFICIENT) / deltaT
 						// console.log(petal.velocity);
